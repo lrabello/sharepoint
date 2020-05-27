@@ -261,7 +261,7 @@
             
             $('ul.card-list').addClass('hidden');
             $('.icon-section').addClass('hidden');
-            $('li').addClass('hidden');
+            $('li').not('.static').addClass('hidden');
             $("li.search").remove();
             $(".remove").removeClass('remove');
     
@@ -272,7 +272,7 @@
                 $('li.' + terms[i]).removeClass('hidden');
                 $('li.' + terms[i]).closest('ul').find(".icon-section").removeClass('hidden');
                 $('li.' + terms[i]).closest('ul.card-list').removeClass('hidden');
-                console.log("Novo!")
+                console.log("1")
             }
     
     
