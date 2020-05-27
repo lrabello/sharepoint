@@ -259,7 +259,7 @@
     
         function searchInTable(terms, term) {
             
-            $('ul.patternCards').addClass('hidden');
+            $('ul.card-list').addClass('hidden');
             $('.icon-section').addClass('hidden');
             $('li').addClass('hidden');
             $("li.search").remove();
@@ -271,8 +271,8 @@
             for (i = 0; i < terms.length; i++) {
                 $('li.' + terms[i]).removeClass('hidden');
                 $('li.' + terms[i]).closest('ul').find(".icon-section").removeClass('hidden');
-                $('li.' + terms[i]).closest('ul').removeClass('hidden');
-                console.log("TESTE UL" + $('li.' + terms[i]).closest('ul').find(".icon-section"))
+                $('li.' + terms[i]).closest('ul.card-list').removeClass('hidden');
+                console.log("Novo!")
             }
     
     
