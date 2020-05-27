@@ -258,7 +258,8 @@
         }
     
         function searchInTable(terms, term) {
-
+            
+            $('ul.patternCards').addClass('hidden');
             $('.icon-section').addClass('hidden');
             $('li').addClass('hidden');
             $("li.search").remove();
@@ -270,13 +271,14 @@
             for (i = 0; i < terms.length; i++) {
                 $('li.' + terms[i]).removeClass('hidden');
                 $('li.' + terms[i]).closest('ul').find(".icon-section").removeClass('hidden');
-                console.log("TESTE closest!" + $('li.' + terms[i]).closest('ul').find(".icon-section"))
+                $('li.' + terms[i]).closest('ul').removeClass('hidden');
+                console.log("TESTE UL" + $('li.' + terms[i]).closest('ul').find(".icon-section"))
             }
     
     
     
             if ($('li:not(".hidden")').length == 0) {
-                console.log(remove);
+                //console.log(remove);
 
                 if (remove) {
                     $('.info-text').addClass("error-removed");
