@@ -269,15 +269,14 @@
     
             for (i = 0; i < terms.length; i++) {
                 $('li.' + terms[i]).removeClass('hidden');
-                $('li.' + terms[i]).closest('.icon-section').removeClass('hidden');
-                console.log("TESTE " + $('li.' + terms[i]).closest('.icon-section'))
+                $('li.' + terms[i]).siblings('.icon-section').removeClass('hidden');
+                console.log("TESTE " + $('li.' + terms[i]).siblings('.icon-section'))
             }
     
     
     
             if ($('li:not(".hidden")').length == 0) {
                 console.log(remove);
-                console.log("no if");
 
                 if (remove) {
                     $('.info-text').addClass("error-removed");
