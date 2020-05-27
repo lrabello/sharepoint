@@ -269,8 +269,8 @@
     
             for (i = 0; i < terms.length; i++) {
                 $('li.' + terms[i]).removeClass('hidden');
-                $('li.' + terms[i]).siblings('.icon-section').removeClass('hidden');
-                console.log("TESTE siblings " + $('li.' + terms[i]).siblings('.icon-section'))
+                $('li.' + terms[i]).closest('ul').find(".icon-section").removeClass('hidden');
+                console.log("TESTE closest!" + $('li.' + terms[i]).siblings('.icon-section'))
             }
     
     
