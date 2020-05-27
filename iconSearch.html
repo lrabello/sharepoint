@@ -258,7 +258,6 @@
         }
     
         function searchInTable(terms, term) {
-            console.log("na função");
 
             $('.icon-section').addClass('hidden');
             $('li').addClass('hidden');
@@ -271,8 +270,7 @@
             for (i = 0; i < terms.length; i++) {
                 $('li.' + terms[i]).removeClass('hidden');
                 $('li.' + terms[i]).closest('.icon-section').removeClass('hidden');
-                console.log("no for aaaaaaa");
-
+                console.log("TESTE " + $('li.' + terms[i]).closest('.icon-section'))
             }
     
     
