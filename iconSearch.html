@@ -245,6 +245,7 @@
         }
         
         $("#theme-switcher").on('click',function() {
+            console.log("theme switcher");
             changeTheme();
         } )
         
@@ -252,7 +253,11 @@
 
             var src = $("ul.patternCards li img").attr("src");
             $(this).attr('src', src.replace('_D','_W'));
-            
+
+            if(src) {
+
+            }
+
         }
         function searchInTable(terms, term) {
             
