@@ -1,5 +1,6 @@
 <style>
     :root {
+   /*   
     --color-white: #ffffff;
     --color-black: #000000;
     --color-atmo1: #F9F9F9;
@@ -23,7 +24,30 @@
     --color-acce1w: #EFEFEF;
   
     --color-light-blue: #4389DB;
+  */
+  --color-white: #ffffff;
+    --color-black: #000000;
+    --color-atmo1: #fbfcfc;
+    --color-atmo2: #f0f0f0;
+    --color-atmo3: #e8e8e8;
+    --color-atmo4: #ccced0;
+    --color-atmo5: #999999;
+    --color-atmo6: #999999;
+    --color-atmo7: #414141;
+    --color-acce2: #2064B4;
+    --color-acce2h: #477DBD;
+    --color-acce3: #CC0000;
+    --color-acce1w: #cccccc;
+    --color-atmo1w: #313131;
+    --color-atmo2w: #282828;
+    --color-atmo3w: #1F1F1F;
+    --color-atmo4w: #4B4B4B;
+    --color-atmo5w: #656565;
+    --color-atmo6w: #2C2C2C;
+    --color-atmo7w: #919191;
+    --color-acce1w: #EFEFEF;
   
+    --color-light-blue: #4389DB;
     --font-size-big-title: 32px;
     --font-size-title: 22px;
     --font-size-normal: 14px;
@@ -141,7 +165,7 @@
     margin-left: -19px !important;
     object-fit: none;
     object-position: 50%;
-    background-color: #fbfcfc;
+    background-color: var(--color-atmo1);
   }
   
   ul.cards.patternCards li img:not(.ms-asset-icon) {
@@ -178,19 +202,12 @@
   
   ul.cards li {
     position: relative;
-    /*padding-right: 40px !important;
-    padding-left: 20px !important;
-    padding-top: 20px !important;
-    padding-bottom: 10px !important;*/
+
     padding-right: 10px !important;
     padding-left: 10px !important;
     padding-top: 0px !important;
     padding-bottom: 40px !important;
     z-index: 10;
-  }
-  
-  ul.patternCards li {
-    /*padding-bottom: 75px !important;*/
   }
   
   ul.patternCards.info li {
@@ -340,8 +357,8 @@
 }
 
   .dark-theme {
-      background-color: #313131!important;
-      color: #CCCCCC!important;
+      background-color:var(--color-atmo1w)!important;
+      color:--color-acce1w!important;
   }
   ul li .box {
     width: calc(100% - 42px);
@@ -353,13 +370,16 @@
     padding-right: 10px;
     display: flex;
     justify-content: flex-end;
-    background-color: #fbfcfc;
+    background-color: --color-atmo1;
   }
   ul li .box.dark-theme {
-    background-color: #313131;
+    background-color: var(--color-atmo1w);
   }
-  ul li .box.dark-theme a {
-    color: #cccccc;
+  ul.cards li .box.dark-theme a span {
+    color: var(--color-acce1w);
+  }
+  ul.cards li .box.dark-theme a span:hover {
+    color: var(--color-acce1w);
   }
   
   ul li div.info {
@@ -1170,13 +1190,7 @@
     }
   }
   @media only screen and (min-width: 1400px) {
-    /*ul.patternCards li {
-      flex: 0 0 10.2%!important;
-    }
-    ul.cards.patternCards li img:not(.ms-asset-icon) {
-        margin-left: calc(50% - 91px)!important;
-    }
-    */
+
     ul.patternCards {
         width: 1140px;
         max-width: 1140px!important;
