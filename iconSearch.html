@@ -244,24 +244,6 @@
             return terms;
         }
         
-        $("#theme-switcher").on('click',function() {
-            console.log("theme switcher 4");
-            changeTheme();
-        } )
-        
-        function changeTheme() {
-           
-           const element = $("ul.patternCards li img");
-           const from = element.attr('src').includes('_D') ? '_D':'_W';
-           const to = element.attr('src').includes('_D') ? '_W': '_D'; 
-
-
-           $("ul.patternCards li img").each((i, img) =>{
-            var srcModified = $(img).attr("src").replace(new RegExp(from, g), to);
-            $(img).attr('src', srcModified);
-           }) 
-           
-        }
         function searchInTable(terms, term) {
             
             $('ul.card-list').addClass('hidden');
