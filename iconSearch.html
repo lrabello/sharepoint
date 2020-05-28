@@ -243,7 +243,14 @@
     
             return terms;
         }
-    
+        
+        $("#theme-switcher").on('click',function() {
+            changeTheme();
+        } )
+        
+        function changeTheme() {
+            console.log($("ul.patternCards li img").attr());
+        }
         function searchInTable(terms, term) {
             
             $('ul.card-list').addClass('hidden');
