@@ -249,7 +249,10 @@
         } )
         
         function changeTheme() {
-            console.log($("ul.patternCards li img").attr());
+
+            var src = $("ul.patternCards li img").attr("src");
+            $(this).attr('src', src.replace('_D','_W'));
+            
         }
         function searchInTable(terms, term) {
             
