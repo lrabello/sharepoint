@@ -169,10 +169,12 @@
     width: calc(100% + 38px);
     margin-left: -19px !important;
     object-fit: none;
-    object-position: 50%;
+    object-position: 50% 50px;
     background-color: var(--color-atmo1);
   }
-  
+  ul.cards li.large-icon img:not(.ms-asset-icon) {
+    object-position: 50%;
+  }
   ul.cards.patternCards li img:not(.ms-asset-icon) {
     margin-bottom: 0px !important;
     width: calc(100% - 3px) !important;
