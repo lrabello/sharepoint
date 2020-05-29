@@ -359,16 +359,24 @@
   }
 
   /****** ICON LIBRARY DOC CARD ******/
+  ul.icon-library li .box {
+    bottom: 0!important;
+  }
   ul.patternCards.icon-library li {
     flex: 0 0 450px;
+    background-color: red!important;
   }
-
+  ul.cards.icon-library li.active:before {
+    background-color: blue!important;
+  }
   ul.cards.icon-library li img:not(.ms-asset-icon) {
     object-position: 50%;
     margin-left: 20px!important;
+    background-color: blueviolet!important;
+    height: 150px!important;
   }
   ul.patternCards.icon-library .title {
-    font-size: 18px;
+    font-size: 18px!important;
   }
   ul.cards.icon-library li .box a {
     width: fit-content;
@@ -377,8 +385,7 @@
     padding-left: 10px;
     padding-right: 10px;
   }
-
-
+/*********/
 
   .icon-section {
     width: calc(100% - 150px)!important;
