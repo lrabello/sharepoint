@@ -357,7 +357,7 @@
 
 
   .icon-section {
-    width: calc(100% - 150px)!important;
+    width: calc(100% - 80px)!important;
     padding-top: 10px;
     border-top: 1px solid #ccced0!important;
     text-transform: uppercase!important;
@@ -368,8 +368,7 @@
 }
 
   .dark-theme {
-      background-color:var(--color-atmo1w)!important;
-      color:--color-acce1w!important;
+      color:var(--color-acce1w)!important;
   }
   ul li .box {
     width: calc(100% - 42px);
@@ -389,11 +388,10 @@
   ul.cards li .box.dark-theme a span {
     color: var(--color-acce1w)!important;
   }
-  /*
-  ul.cards li .box.dark-theme a:hover {
-    background-color: var(--color-atmo3w)!important;
-  }*/
-  
+
+  ul.patternCards .title.dark-theme {
+    width: calc(100% - 32px);
+  }
   ul li div.info {
     position: absolute;
     top: 205px;
@@ -1217,6 +1215,7 @@
     }
     ul.cards.patternCards li img:not(.ms-asset-icon) {
       margin-left: calc(50% - 88px)!important;
+      width: calc(100% - 2px) !important;
     }
   }
   @media only screen and (max-width: 1394px) {
