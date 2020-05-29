@@ -360,19 +360,22 @@
 
   /****** ICON LIBRARY DOC CARD ******/
   ul.icon-library li .box {
-    bottom: 10px!important;
+    /*bottom: 10px!important;*/
     width: 100%;
     top: auto;
     bottom: 0!important;
 
   }
-
+  ul.patternCards.icon-section li.active:after {
+    background-color: yellow;
+  }
   ul.patternCards.icon-library li {
     flex: 0 0 450px;
     background-color: red!important;
   }
   ul.cards.icon-library li.active:before {
     background-color: blue!important;
+    width: 100%;
   }
   ul.cards.icon-library li img:not(.ms-asset-icon) {
     margin-left: 0px!important;
