@@ -221,7 +221,7 @@
     
             }
     
-            remove = false;
+           /*  remove = false;
             for (i = 0; i < changed.length; i++) {
                 if (changed[i].indexOf(term) != -1) {
                     var errorMessage = $('div.error-message a');
@@ -232,14 +232,13 @@
     
                     remove = true;
                 }
-            }
+            } */
     
             return terms;
         }
         
         function searchInTable(terms, term) {
-            
-            console.log("SEARCH")
+            console.log("3")
             $('ul.card-list').addClass('hidden');
             $('.icon-section').addClass('hidden');
             $('li').not('.static').addClass('hidden');
@@ -254,7 +253,6 @@
                 $('li.' + terms[i]).closest('ul').find(".icon-section").removeClass('hidden');
                 $('li.' + terms[i]).closest('ul.card-list').removeClass('hidden');
             }
-    
     
     
             if ($('li:not(".hidden")').length == 0) {
