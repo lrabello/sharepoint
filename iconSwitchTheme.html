@@ -47,6 +47,7 @@ function changeTheme(el) {
     const linkTo = elementLink.not('.view').attr('href').includes('_D') ? '_W': '_D'; */
 
     $("ul.patternCards li img").each((i, img) =>{
+        console.log("novo 1")
         const srcModified = $(img).attr("src").replace(new RegExp(imgFrom, 'g'), imgTo);
         $(img).attr('src', srcModified);
 
