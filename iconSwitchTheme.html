@@ -1,0 +1,59 @@
+<a id="theme-switcher" href="#">Switch to Wicked Theme</a>
+<script>
+// This will be placed in the Snippet. area in Sharepoint.
+$("#theme-switcher").on('click',function(e) {
+    changeTheme(e.target);
+} )
+
+function changeTheme(el) {
+   
+    const element = $("ul.patternCards li");
+    const elementImg = $("ul.patternCards li img");
+    const elementLink = $("ul.patternCards li .box a");
+
+
+    if ($(el).html().includes('Wicked')) {
+        $(el).html($(el).html().replace('Wicked', 'Dawn'));
+    } else {
+        $(el).html($(el).html().replace('Dawn', 'Wicked'))
+    }
+
+    if (element.closest('ul').hasClass('icon-library') && element.hasClass('dark-theme')) {
+        element.removeClass('dark-theme');
+        elementLink.filter('.view').attr('href', 'https://xd.adobe.com/view/9dc7f76d-e501-4072-5655-96c583652ac4-ebf6/?fullscreen')
+    } else {
+        element.addClass('dark-theme');
+        elementLink.filter('.view').attr('href', 'https://xd.adobe.com/view/ee8a8ae2-c4fa-41fb-5dff-cc7a81ce4a11-98bb/?fullscreen')
+    }
+
+    if (element.find('.box').hasClass('dark-theme')) {
+        element.find('.box').removeClass('dark-theme');
+        elementImg.css('background-color', '#FBFCFC');
+    } else {
+        element.find('.box').addClass('dark-theme');
+        elementImg.css('background-color', '#313131');
+    }
+
+    if (element.find('.title').hasClass('dark-theme')) {
+        element.find('.title').removeClass('dark-theme');
+    } else {
+        element.find('.box').addClass('dark-theme');
+        element.find('.title').addClass('dark-theme');
+    }
+
+    const imgFrom = elementImg.attr('src').includes('_D') ? '_D':'_W';
+    const imgTo = elementImg.attr('src').includes('_D') ? '_W': '_D'; 
+    const linkFrom = elementLink.not('.view').attr('href').includes('_D') ? '_D':'_W';
+    const linkTo = elementLink.not('.view').attr('href').includes('_D') ? '_W': '_D';
+
+    $("ul.patternCards li img").each((i, img) =>{
+        const srcModified = $(img).attr("src").replace(new RegExp(imgFrom, 'g'), imgTo);
+        $(img).attr('src', srcModified);
+
+        const hrefModified = $(img).siblings().filter('div.box').find('a').not('.view').attr('href').replace(new RegExp(linkFrom, 'g'), linkTo);
+        $(img).siblings().filter('div.box').find('a').not('.view').attr('href', hrefModified);
+
+    }); 
+
+}
+</script>
