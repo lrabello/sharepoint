@@ -43,15 +43,23 @@ function changeTheme(el) {
 
     const imgFrom = elementImg.attr('src').includes('_D') ? '_D':'_W';
     const imgTo = elementImg.attr('src').includes('_D') ? '_W': '_D'; 
-    const linkFrom = elementLink.not('.view').attr('href').includes('_D') ? '_D':'_W';
-    const linkTo = elementLink.not('.view').attr('href').includes('_D') ? '_W': '_D';
+    /* const linkFrom = elementLink.not('.view').attr('href').includes('_D') ? '_D':'_W';
+    const linkTo = elementLink.not('.view').attr('href').includes('_D') ? '_W': '_D'; */
 
     $("ul.patternCards li img").each((i, img) =>{
         const srcModified = $(img).attr("src").replace(new RegExp(imgFrom, 'g'), imgTo);
         $(img).attr('src', srcModified);
 
-        const hrefModified = $(img).siblings().filter('div.box').find('a').not('.view').attr('href').replace(new RegExp(linkFrom, 'g'), linkTo);
-        $(img).siblings().filter('div.box').find('a').not('.view').attr('href', hrefModified);
+        const links = $(img).siblings().filter('div.box').find('a').not('.view');
+        links.each((j, link) => {
+            const linkFrom = $(link).attr('href').includes('_D') ? '_D':'_W';
+            const linkTo = $(link).attr('href').includes('_D') ? '_W': '_D';
+            
+            $(link).attr('href').replace(new RegExp(linkFrom, 'g'), linkTo);
+        });
+
+       /*  const hrefModified = $(img).siblings().filter('div.box').find('a').not('.view').attr('href').replace(new RegExp(linkFrom, 'g'), linkTo);
+        $(img).siblings().filter('div.box').find('a').not('.view').attr('href', hrefModified); */
 
     }); 
 
