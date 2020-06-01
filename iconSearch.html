@@ -238,7 +238,7 @@
         }
         
         function searchInTable(terms, term) {
-            console.log("3")
+            console.log("4")
             $('ul.card-list').addClass('hidden');
             $('.icon-section').addClass('hidden');
             $('li').not('.static').addClass('hidden');
@@ -255,7 +255,7 @@
             }
     
     
-            if ($('li:not(".hidden")').length == 0) {
+            if ($('li:not(".static"):not(".hidden")').length == 0) {
 
                 if (remove) {
                     $('.info-text').addClass("error-removed");
