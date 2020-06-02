@@ -507,6 +507,12 @@ a.multibutton  {
     background-color: #e8e8e8!important;
   }
   
+  input[type=text] {
+    border: none;
+    border-bottom: 1px solid #CCCED0;
+    border-radius: 2px;
+  }
+
   ul li .box {
     width: calc(100% - 43px);
     height: 32px !important;
@@ -973,13 +979,13 @@ a.multibutton  {
   }
   
   input:hover {
-    border-color: var(--color-atmo7) !important;
+    border-bottom: 1px solid var(--color-atmo7) !important;
     cursor: text;
   }
   
   input:focus {
     outline: none;
-    border-color: var(--color-atmo7) !important;
+    border-bottom: 1px solid var(--color-atmo7) !important;
   }
   
   input::placeholder {
