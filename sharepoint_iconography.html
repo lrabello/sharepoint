@@ -505,7 +505,7 @@ a.multibutton  {
 
   .ghost-button {
     left: 1207px;
-    /*right: 48px;*/
+    right: 0;
     top: 177px;
     width: 100px;
     height: 32px;
@@ -1376,13 +1376,10 @@ a.multibutton  {
   @media only screen and (min-width: 1400px) {
 
     ul.patternCards {
-        /*width: 1140px;
-        max-width: 1140px!important;*/
         width: 100%;
         max-width: 100%!important;
     }
     ul.cards.patternCards li img:not(.ms-asset-icon) {
-      /*margin-left: calc(50% - 82px)!important;*/
       margin-left: calc(50% - 93px)!important;
       width: calc(100% - 3px) !important;
     }
@@ -1390,12 +1387,25 @@ a.multibutton  {
       margin-bottom: 30px!important;
     }
     ul.patternCards li {
-      /*flex: 0 0 13%;*/
       flex: 0 0 170px;
     }
-    .icon-section {
-      /*margin-top: 30px;*/
+    .ghost-button {
+      left: 0px;
+      right: 48px;
+      top: 177px;
+      width: 100px;
+      height: 32px;
+      color: var(--color-atmo7)!important;
+      border-radius: 2px;
+      padding-right: 20px;
+      padding-left: 20px;
+      position: absolute;
+      float: right;
+      font-weight: 600;
+      font-size: 12px!important;
+      line-height: 32px;
     }
+
   }
   @media only screen and (max-width: 1394px) {
     ul.patternCards {
