@@ -1,0 +1,86 @@
+<a id="theme-switcher-2" class="multibutton" href="#">
+    <span class="side-a multibutton-selected">Dawn</span>
+    <span class="side-b">Wicked</span>
+</a>
+<script type="text/javascript">
+    $(document).ready(function(){
+        const DAWN = 0;
+        const WICKED = 1;
+        // This will be placed in the Snippet. area in Sharepoint.
+        $("#theme-switcher-2").on('click',function(e) {
+            
+            if ($(e.target).hasClass("side-a")) {
+                if ($(".multibutton-selected").hasClass('side-a')) {
+                    return;
+                }
+                $('.download').attr('href', $('.download').attr('href').replace('_W', '_D'));
+                $(".multibutton-selected").removeClass("multibutton-selected");
+                $(e.target).addClass("multibutton-selected");
+                changeTheme(e.target, WICKED, DAWN);
+            } else {
+                if ($(".multibutton-selected").hasClass('side-b')) {
+                    return;
+                }
+                $('.download').attr('href', $('.download').attr('href').replace('_D', '_W'));
+                $(".multibutton-selected").removeClass("multibutton-selected");
+                $(e.target).addClass("multibutton-selected");
+                changeTheme(e.target, DAWN, WICKED);
+            }
+
+           // changeTheme(e.target);
+        } )
+
+        function changeTheme(el, themeFrom, themeTo) {
+        
+            const element = $("ul.patternCards li");
+            const elementImg = $("ul.patternCards li img");
+            const elementLink = $("ul.patternCards li .box a");
+
+
+    /*         if ($(el).html().includes('Wicked')) {
+                $(el).html($(el).html().replace('Wicked', 'Dawn'));
+            } else {
+                $(el).html($(el).html().replace('Dawn', 'Wicked'))
+            } */
+
+            if (themeTo === DAWN && element.find('.box').hasClass('dark-theme')) {
+                element.find('.box').removeClass('dark-theme');
+                elementImg.css('background-color', '#FBFCFC');
+            } else {
+                element.find('.box').addClass('dark-theme');
+                elementImg.css('background-color', '#313131');
+            }
+
+            if (themeTo === DAWN && element.find('.title').hasClass('dark-theme')) {
+                element.find('.title').removeClass('dark-theme');
+            } else {
+                element.find('.box').addClass('dark-theme');
+                element.find('.title').addClass('dark-theme');
+            }
+
+            const imgFrom = themeFrom === DAWN ? '_D':'_W';
+            const imgTo = themeTo === WICKED ? '_W': '_D'; 
+            /* const linkFrom = elementLink.not('.view').attr('href').includes('_D') ? '_D':'_W';
+            const linkTo = elementLink.not('.view').attr('href').includes('_D') ? '_W': '_D'; */
+
+            $("ul.patternCards li img").each((i, img) =>{
+                const srcModified = $(img).attr("src").replace(new RegExp(imgFrom, 'g'), imgTo);
+                $(img).attr('src', srcModified);
+
+                const links = $(img).siblings().filter('div.box').find('a').not('.view');
+                links.each((j, link) => {
+                    const linkFrom = themeFrom === DAWN ? '_D':'_W';
+                    const linkTo = themeTo === WICKED ? '_W': '_D';
+                    
+                    const hrefModified = $(link).attr('href').replace(new RegExp(linkFrom, 'g'), linkTo);
+                    $(link).attr('href', hrefModified);
+                });
+
+            /*  const hrefModified = $(img).siblings().filter('div.box').find('a').not('.view').attr('href').replace(new RegExp(linkFrom, 'g'), linkTo);
+                $(img).siblings().filter('div.box').find('a').not('.view').attr('href', hrefModified); */
+
+            }); 
+
+        }
+    });
+</script>
