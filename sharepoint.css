@@ -239,7 +239,7 @@ a:visited {
 
 .wicked a,
 .wicked a:visited{
-    color: var(--color-acce2h) !important;
+    color: var(--color-acce2h);
 }
 
 ul.cards li a{
