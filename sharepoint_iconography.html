@@ -432,40 +432,6 @@
       color:var(--color-acce1w)!important;
   }
 
-#theme-switcher-2 {
-   /* position: absolute;
-    right: 227px;
-    margin-top: -100px;*/
-}
-
-.primary-button {
-    /*right: 275px;*/
-    left: 1020px;
-    top: 177px;
-    width: 150px;
-    height: 32px;
-    color: var(--color-atmo1)!important;
-    background-color: var(--color-acce2);
-    border-radius: 2px;
-    padding-right: 20px;
-    padding-left: 20px;
-    position: absolute;
-    float: right;
-    font-weight: 600;
-}
-.primary-button img {
-    padding-top: 0!important;
-    position: absolute;
-}
-.primary-button span {
-    top:7px;
-    left: 54px;
-    position: absolute;
-}
-.primary-button:hover {
-    background-color: var(--color-acce2h);
-}
-
 .multibutton {
     background-color: #f0f0f0;
     border: 1px solid #ccced0;
@@ -505,16 +471,53 @@ a.multibutton  {
 
 
 }
-  .ghost-button {
-    font-size: 12px!important;
-    font-weight: 600;
-    color: var(--color-atmo7)!important;
+
+.primary-button {
+    left: 1020px;
+    top: 177px;
+    width: 150px;
     height: 32px;
+    color: var(--color-atmo1)!important;
+    background-color: var(--color-acce2);
+    border-radius: 2px;
+    padding-right: 20px;
+    padding-left: 20px;
+    position: absolute;
+    float: right;
+    font-weight: 600;
+}
+.primary-button img, .ghost-button img {
+    padding-top: 0!important;
+    position: absolute;
+}
+.primary-button span {
+    top:7px;
+    left: 54px;
+    position: absolute;
+}
+.primary-button:hover {
+    background-color: var(--color-acce2h);
+}
+
+
+  .ghost-button {
+    left: 1020px;
+    top: 177px;
+    width: 150px;
+    height: 32px;
+    color: var(--color-atmo7)!important;
+    border-radius: 2px;
+    padding-right: 20px;
+    padding-left: 20px;
+    position: absolute;
+    float: right;
+    font-weight: 600;
+    font-size: 12px!important;
     line-height: 32px;
-    padding: 8px 20px;
   }
+
   .ghost-button:hover {
-    background-color: #e8e8e8!important;
+    background-color: var(--color-atmo3)!important;
   }
   
   input[type=text] {
