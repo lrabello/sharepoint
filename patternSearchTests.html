@@ -184,15 +184,23 @@
         $(".category-tag").on('click',(e) => {
 
             const currentSpan = $(e.currentTarget);
+            const closestLi = currentSpan.closest('li');
             const tag = currentSpan.html().split(' ').join('').toLowerCase();
+
+            if(closestLi.hasClass('filtered')) {
+
+                $(`li.${tag}`).removeClass('filtered');
+                searchInTable(findTags(""));
+            } else {
             
-            $('li').addClass('hidden');
-            $('li').addClass('remove');
+                $('li').addClass('hidden');
+                $('li').addClass('remove');
 
-            $(`li.${tag}`).removeClass('remove');
-            $(`li.${tag}`).removeClass('hidden');
+                $(`li.${tag}`).removeClass('remove');
+                $(`li.${tag}`).removeClass('hidden');
 
-            console.log(tag)
+                $(`li.${tag}`).addClass('filtered');
+            }
 
         })
     
