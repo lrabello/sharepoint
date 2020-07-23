@@ -113,17 +113,23 @@ body {
   margin-left: 10px !important;
   margin-right: 10px !important;
   margin-top: 10px;
+  width: 225px!important; /*NEW*/
 }
-
+#contentBox {
+  min-width: 703px; /*NEW*/
+}
 #sideNavBox a.static {
   margin-left: 10px;
   margin-right: -10px;
+  /*margin-bottom: 15px; *//*NEW*/
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   letter-spacing: 0.02em;
 }
 
 #sideNavBox li:hover:not(.selected) a.static {
   background-color: var(--color-atmo3);
+  padding-top: 10px; /*NEW*/
+  padding-bottom: 10px; /*NEW*/
 }
 
 #sideNavBox li.selected a.static {
