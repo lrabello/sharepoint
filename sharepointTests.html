@@ -1,3 +1,4 @@
+
 <style>
   /*
   :root {
@@ -130,13 +131,15 @@ body {
   letter-spacing: 0.02em;
 }
 #sideNavBox li:hover:not(.selected) a.static {
-  background-color: var(--color-atmo3);
+  background-color: var(--color-atmo3); 
 }
 li > a.ms-core-listMenu-item:hover {
   background-color:  var(--color-atmo3);  /*NEW NAV*/
-  border-left: 2px solid #CC0000!important;
+  border-left: 2px solid #CC0000!important; /*NEW NAV*/
 }
-
+.about.screen span.category-tag {
+  float: right!important;  /*NEW TAG*/
+}
 #sideNavBox li.selected a.static {
   background-color: var(--color-atmo7);
   color: var(--color-atmo1) !important;
@@ -1210,7 +1213,7 @@ div.title {
   }
 }
  .category-tag {
-    font-size: 12px;
+    font-size: 10px; /*NEW TAG*/
     margin-right: 6px;
     /*margin:0 10px 10px 0;*/
     padding: 0 10px;
