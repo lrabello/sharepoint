@@ -107,7 +107,9 @@ body
     margin-bottom:13px;
 }
 
-
+a#O365_AppName, a#O365_AppName:visited {
+    color:  var(--color-white)!important;
+}
 /********************************************** CARDS *************************************************/
 
 
