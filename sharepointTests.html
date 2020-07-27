@@ -127,7 +127,7 @@ body {
 
 #sideNavBox a.static {
   /*margin-left: 10px;*/
-  margin-left: 30px!important;  /*NEW NAV*/
+  /*margin-left: 30px!important; */ /*NEW NAV*/
   margin-right: 0px;
   margin-bottom: 10px; /*NEW NAV*/
   padding-top: 10px; /*NEW NAV*/
@@ -145,14 +145,16 @@ li > a.ms-core-listMenu-item:hover, li > a.ms-core-listMenu-item:active {
 }
 
 #sideNavBox a.static:hover {
-    margin-left: 28px!important; /*NEW NAV*/
+    /*margin-left: 28px!important;*/ /*NEW NAV*/
     margin-right: 20px; /*NEW NAV*/
 }
-
-li.static {
-   background-color: #999999;
-    border-left: 2px solid #CC0000;
-    margin: 0 30px;
+#sideNavBox a.static {
+  margin-left: 0px!important; /*NEW NAV*/
+}
+li.static:hover {
+   background-color: var(--color-atmo1);/*NEW NAV*/
+    border-left: 2px solid #CC0000;/*NEW NAV*/
+    margin: 0 30px; /*NEW NAV*/
 }
 
 
