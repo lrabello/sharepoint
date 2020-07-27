@@ -213,10 +213,11 @@
         })
 
         $(".tag-filter .category-tag").on('click',(e) => {
-            const tag = currentSpan.html().split(' ').join('').toLowerCase();
+           // const tag = currentSpan.html().split(' ').join('').toLowerCase();
 
-            $(`li.${tag}`).removeClass('filtered');
-                searchInTable(findTags(""));
+           // $(`li.${tag}`).removeClass('filtered');
+           //     searchInTable(findTags(""));
+           console.log("INSIDE!")
         })
 
         $(".input").keydown(function(e) {
