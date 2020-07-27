@@ -208,10 +208,17 @@
 
                 $(`li.${tag}`).addClass('filtered');
             }
-            console.log('TEST')
+            //console.log('TEST')
 
         })
-    
+
+        $(".tag-filter .category-tag").on('click',(e) => {
+            const tag = currentSpan.html().split(' ').join('').toLowerCase();
+
+            $(`li.${tag}`).removeClass('filtered');
+                searchInTable(findTags(""));
+        })
+
         $(".input").keydown(function(e) {
             if (e.keyCode == 13) // enter key
             {
