@@ -214,13 +214,13 @@
                 $(`li.${tag}`).addClass('filtered');
 
                 $('.tag-filter').append(currentSpan.clone().append('<img src="https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Iconography/XS_D/Close.XS_D.svg"/>'));
-                console.log('UP TO DATE CARD')
+                console.log('UP TO DATE CARD2')
             }
             //console.log('TEST')
 
         })
 
-        $(".tag-filter .category-tag").on('click',(e) => { 
+        $("body").on('click','.tag-filter .category-tag',(e) => { 
             const currentSpan = $(e.currentTarget);
             const tag = currentSpan.html().split(' ').join('').toLowerCase();
 
@@ -229,7 +229,7 @@
 
             $('.tag-filter').html("");
 
-            console.log('TEST')
+            console.log('TEST2')
         })
 
         $(".input").keydown(function(e) {
