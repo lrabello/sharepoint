@@ -196,6 +196,14 @@
             const rawTag = currentSpan.html();
             const tag = currentSpan.html().split(' ').join('').toLowerCase();
 
+            if(closestLi.hasClass('filtered')) {
+
+                $(`li.${tag}`).removeClass('filtered');
+                searchInTable(findTags(""));
+
+                $('.tag-filter').html("");
+
+            } else {
                 
                 $('li').addClass('hidden');
                 $('li').addClass('remove');
@@ -206,7 +214,8 @@
                 $(`li.${tag}`).addClass('filtered');
 
                 $('.tag-filter').append(currentSpan.clone().append('<img src="https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Iconography/XS_D/Close.XS_D.svg"/>'));
-                console.log('UP TO DATE NOVO2')
+                console.log('UP TO DATE AGAIN CARD')
+            }
             //console.log('TEST')
 
         })
@@ -229,7 +238,7 @@
 
                 $('.tag-filter').html("");
                 searchInTable(findTags(""));
-                console.log('UP TO DATE NOVO3')
+                console.log('UP TO DATE AGAIN')
             }
 
 
