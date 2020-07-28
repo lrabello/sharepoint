@@ -214,22 +214,25 @@
                 $(`li.${tag}`).addClass('filtered');
 
                 $('.tag-filter').append(currentSpan.clone().append(' <img src="https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Iconography/XS_D/Close.XS_D.svg"/>'));
-                console.log('UP TO DATE CARD agaaaain')
+                console.log('FORA')
             }
             //console.log('TEST')
 
         })
 
         $("body").on('click','.tag-filter .category-tag',(e) => { 
+            
             const currentSpan = $(e.currentTarget);
-            const tag = currentSpan.html().split(' ').join('').toLowerCase();
+            const tagArray = currentSpan.html().split(' ');
+            const tag = tagArray.slice(0, tagArray.length-2).join('').toLowerCase();
+            //const tag = currentSpan.html().split(' ').join('').toLowerCase();
 
             $(`li.${tag}`).removeClass('filtered');
                 searchInTable(findTags(""));
 
             $('.tag-filter').html("");
 
-            console.log('DENTRO DO FILTER')
+            console.log('FUNCIONA')
         })
 
         $(".input").keydown(function(e) {
@@ -328,7 +331,7 @@
     
                 if (remove) {
                     $('.info-text').addClass("error-removed");
-                    //console.log("REMOVE");
+                    console.log("REMOVE");
                 } else
                     $('.info-text').addClass("error");
             }
