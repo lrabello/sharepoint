@@ -189,7 +189,7 @@
     
         });
     
-        $(".category-tag").on('click',(e) => {
+        $("ul.cards .category-tag").on('click',(e) => {
 
             const currentSpan = $(e.currentTarget);
             const closestLi = currentSpan.closest('li');
@@ -200,6 +200,9 @@
 
                 $(`li.${tag}`).removeClass('filtered');
                 searchInTable(findTags(""));
+
+                $('.tag-filter').html("");
+
             } else {
                 
                 $('li').addClass('hidden');
@@ -211,9 +214,20 @@
                 $(`li.${tag}`).addClass('filtered');
 
                 $('.tag-filter').append(currentSpan.clone().append('<img src="https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Iconography/XS_D/Close.XS_D.svg"/>'));
-                console.log('UP TO DATE 3')
+                console.log('UP TO DATE AAAA')
             }
             //console.log('TEST')
+
+        })
+
+        $(".tag-filter .category-tag").on('click',(e) => { 
+            const currentSpan = $(e.currentTarget);
+            const tag = currentSpan.html().split(' ').join('').toLowerCase();
+
+            $(`li.${tag}`).removeClass('filtered');
+
+            $('.tag-filter').html("");
+            searchInTable(findTags(""));
 
         })
 
