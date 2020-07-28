@@ -192,6 +192,7 @@
 
             const currentSpan = $(e.currentTarget);
             const closestLi = currentSpan.closest('li');
+            const rawTag = currentSpan.html();
             const tag = currentSpan.html().split(' ').join('').toLowerCase();
 
             if(closestLi.hasClass('filtered')) {
@@ -199,7 +200,7 @@
                 $(`li.${tag}`).removeClass('filtered');
                 searchInTable(findTags(""));
             } else {
-            
+                
                 $('li').addClass('hidden');
                 $('li').addClass('remove');
 
@@ -207,6 +208,9 @@
                 $(`li.${tag}`).removeClass('hidden');
 
                 $(`li.${tag}`).addClass('filtered');
+
+                $('.tag-filter').append(currentSpan);
+                console.log('UP TO DATE')
             }
             //console.log('TEST')
 
