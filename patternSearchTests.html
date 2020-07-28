@@ -206,13 +206,15 @@
                 $(`li.${tag}`).addClass('filtered');
 
                 $('.tag-filter').append(currentSpan.clone().append('<img src="https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Iconography/XS_D/Close.XS_D.svg"/>'));
-                console.log('UP TO DATE NOVO')
+                console.log('UP TO DATE NOVO2')
             //console.log('TEST')
 
         })
 
         $(".tag-filter .category-tag").on('click',(e) => { 
             const currentSpan = $(e.currentTarget);
+            const closestLi = currentSpan.closest('li');
+            const rawTag = currentSpan.html();
             const tag = currentSpan.html().split(' ').join('').toLowerCase();
 
             if(closestLi.hasClass('filtered')) {
@@ -227,7 +229,7 @@
 
                 $('.tag-filter').html("");
                 searchInTable(findTags(""));
-                console.log('UP TO DATE NOVO')
+                console.log('UP TO DATE NOVO3')
             }
 
 
