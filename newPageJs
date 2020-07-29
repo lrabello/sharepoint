@@ -1,0 +1,353 @@
+<head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <style>
+    input {
+                padding: 0px !important;
+                padding-left: 10px !important;
+                padding-right: 32px !important;
+                max-width: 610px;
+                min-width: 150px;
+                width: 200px;
+                height: 30px;
+                margin-bottom: 5px;
+                border: 1px solid var(--color-atmo6);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            
+            .search {
+                margin-top: 40px;
+            }
+            .search input {
+                width: 326px;
+            }
+            .search input:hover {
+                border-color: var(--color-atmo7) !important;
+                cursor: text;
+            }
+            
+            .search input:focus {
+                outline: none;
+                border-color: var(--color-atmo7) !important;
+            }
+            
+            input::placeholder {
+                color: var(--color-atmo6);
+                font-size: var(--font-size-info);
+                font-weight: 400 !important;
+            }
+            
+            .input .label {
+                font-size: var(--font-size-info) !important;
+                font-weight: 600 !important;
+                color: var(--color-atmo7);
+                display: block;
+                text-align: unset;
+                margin-bottom: var(--s-space);
+                padding: 0px;
+            }
+            
+            input+.icon {
+                position: absolute;
+                width: 32px;
+                height: 32px;
+                margin-left: -32px;
+                background: url("https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Images/input_icons.svg") no-repeat -32px 0px;
+                background-size: cover;
+            }
+            
+            input.filled+.icon {
+                background: url("https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Images/input_icons.svg") no-repeat 0px 0px;
+                background-size: cover;
+            }
+            
+            input.filled+.icon:hover {
+                cursor: pointer;
+            }
+            
+            input.filled .icon:hover {
+                cursor: pointer;
+            }
+            
+            .info-text+.error-message {
+                display: none;
+            }
+            
+            .info-text+.error-message a {
+                color: var(--color-atmo7) !important;
+            }
+            
+            .info-text.error-removed+.error-message {
+                display: block;
+                width: auto;
+                font-size: var(--font-size-info);
+                top: 0px;
+                left: 0px;
+                color: var(--color-atmo6) !important;
+            }
+            
+            .info-text.error:before {
+                content: "No results found. Try again later, you might get lucky!";
+                width: auto;
+                font-size: var(--font-size-info);
+                top: 0px;
+                left: 0px;
+                color: var(--color-atmo6);
+            }
+            
+            .input:placeholder {
+                color: var(--color-atmo6);
+            }
+            
+            td {
+                width: 33.3% !important;
+            }
+            
+          
+          ul.patternCards {
+              display: flex;
+              flex-wrap: wrap;
+              padding-left: 0;
+          }
+          ul.patternCards li {
+            list-style: none;
+            flex: 0 0 29.333333%;
+            /*border: 1px solid #444444;*/
+          }
+    
+          .ms-rte-layoutszone-inner {
+             margin: 0!important;
+          }
+                
+         input[type=text] {
+            border: none;
+            border-bottom: 1px solid #CCCED0;
+            border-radius: 2px;
+         }
+        </style>
+    </head>
+    
+    <body>
+        <div class="search">
+            <div class="label"> </div>
+            <input class="input" type="text" placeholder="Search..." name="fname">
+            <span class="icon"></span>
+            <div class="info-text"></div>
+            <div class="error-message">This pattern has changed to
+                <a href="#"> </a></div>
+        </div>
+        <div class="tag-filter">
+          <!--  <span class="category-tag green-tag">Retail <img src="https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Iconography/XS_D/Close.XS_D.svg"/></span>
+            <span class="category-tag blue-tag">Manufacturing <img src="https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Iconography/XS_D/Close.XS_D.svg"/></span>
+            <span class="category-tag orange-tag">Transportation and Logistics <img src="https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Iconography/XS_D/Close.XS_D.svg"/></span>
+        -->
+        </div>
+    </body>
+    
+    </html>
+    <script>
+        var options = ["file", "uploader", "about", "help", "screen", "selection", "radiobutton", "toggle", "checkbox", "badges", "timepicker", "range", "cardsview", "login", "listview", "assetinventory", "multibuttons", "segmentedcontrol", "inline", "editing", "map", "marker", "bulkactions", "textcapitalization", "wizard", "stepper", "loading", "component", "tooltip", "slider", "control", "searchbox", "date", "range", "controls", "legends", "lists", "cards", "images", "views", "filterspanel", "visualizations", "globalactions", "horizontaltabs", "scroll", "dateformat", "buttons", "emptystates", "notifications", "modals", "banner", "snackbar", "alerts", "error", "form", "pagination", "horizontal", "verticalnavigation", "horizontalnavigation", "dropdown", "header", "input", "textarea", "breadcrumb", "installer", "item", "another", "cookies", "consent", "gdpr", "modal", "overlay", "splash", "toggle", "scroll", "selection", "vertical", "horizontal", "navigation", "menu", "notification", "app", "switcher", "list", "view", "accordion", "action", "bar", "drag", "drop", "filter", "group", "panel", "scheduler", "statustracker", "tracker", "tags", "upward", "navigation", "back", "secondary", "user", "preferences", "facet", "extended", "footer", "preferences", "full", "name", "rich", "text", "editor", "shortcuts", "toolbar", "visual", "flow", "designer", "zoom", "add", "new", "add new item", "another", "launcher", "details", "section", "feeder", "logs", "tool", "tree", "page", "titles", "panels", "dialog", "codeeditor", "commentsection", "specs", "manufacturing", "automotive", "bankingandfinancials"];
+
+        var changed = ["table", "kpis"];
+        var changedMap = {
+            "table": {
+                url: "https://hitachivantara.sharepoint.com/sites/DesignSystem/Visualization%20Library/Home.aspx",
+                content: "Visualization Library"
+            },
+            "kpis": {
+                url: "https://hitachivantara.sharepoint.com/sites/DesignSystem/Visualization%20Library/Home.aspx",
+                content: "Visualization Library"
+            }
+        };
+    
+        $(document).ready(function() {
+    
+            $("li.search").remove();
+            $('.remove').removeClass('remove');
+            $('.hidden').removeClass('hidden');
+            var remove = false;
+    
+            let searchParams = new URLSearchParams(window.location.search);
+            if (searchParams.has('search')) {
+                searchInTable(findTags(fixValue(searchParams.get('search'))));
+                //content = $('td.' + fixValue(searchParams.get('search'))+' .title').html();
+                $(".input").val(searchParams.get('search'));
+            }
+    
+        });
+    
+        $(".input + .icon").mousedown(function() {
+    
+            if ($(".input").hasClass("filled")) {
+                $(".input").val("");
+                $(".input").removeClass("filled");
+                searchInTable(findTags(""));
+            }
+    
+            $('.info-text').removeClass("error");
+    
+        });
+    
+        $("ul.cards .category-tag").on('click',(e) => {
+
+            const currentSpan = $(e.currentTarget);
+            const closestLi = currentSpan.closest('li');
+            const rawTag = currentSpan.html();
+            const tag = currentSpan.html().split(' ').join('').toLowerCase();
+/*
+            if(closestLi.hasClass('filtered')) {
+
+                $(`li.${tag}`).removeClass('filtered');
+                searchInTable(findTags(""));
+
+                $('.tag-filter').html("");
+
+            } else {
+                
+                $('li').addClass('hidden');
+                $('li').addClass('remove');
+
+                $(`li.${tag}`).removeClass('remove');
+                $(`li.${tag}`).removeClass('hidden');
+
+                $(`li.${tag}`).addClass('filtered');
+
+                $('.tag-filter').append(currentSpan.clone().append(' <img src="https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Iconography/XS_D/Close.XS_D.svg"/>'));
+                console.log('FORA')
+            }*/
+            if (!closestLi.hasClass('filtered')) {
+                $('li').addClass('hidden');
+                $('li').addClass('remove');
+
+                $(`li.${tag}`).removeClass('remove');
+                $(`li.${tag}`).removeClass('hidden');
+
+                $(`li.${tag}`).addClass('filtered');
+
+                $('.tag-filter').append(currentSpan.clone().append(' <img src="https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Iconography/XS_D/Close.XS_D.svg"/>'));
+                
+                console.log('NOW?')
+            }
+
+
+
+        })
+
+        $("body").on('click','.tag-filter .category-tag',(e) => { 
+            
+            const currentSpan = $(e.currentTarget);
+            const tagArray = currentSpan.html().split(' ');
+            const tag = tagArray.slice(0, tagArray.length-2).join('').toLowerCase();
+            //const tag = currentSpan.html().split(' ').join('').toLowerCase();
+
+            $(`li.${tag}`).removeClass('filtered');
+                searchInTable(findTags(""));
+
+            $('.tag-filter').html("");
+
+            //console.log('FUNCIONA')
+        })
+
+        $(".input").keydown(function(e) {
+            if (e.keyCode == 13) // enter key
+            {
+                $('input').blur();
+                return false;
+            }
+        });
+    
+        $(".input").keyup(function() {
+    
+            $(".input").removeClass("filled");
+    
+            if ($(".input").val().length > 0) {
+                $(".input").addClass("filled");
+    
+            }
+    
+        });
+    
+        $(".input").focusout(function() {
+    
+            $(".input").removeClass("filled");
+    
+        });
+    
+        $(".input").focusin(function() {
+    
+            if ($(".input").val().length > 0) {
+                $(".input").addClass("filled");
+            }
+    
+        });
+    
+        $("input").on("input", function() {
+            searchInTable(findTags(fixValue($('input.input').val())));
+        });
+    
+    
+        $('.button').click(function() {
+            if (jQuery.inArray($('input.input').val(), options) != -1) {
+                searchInTable($('input.input').val());
+            }
+        });
+    
+        function fixValue(value) {
+            return value.toLowerCase().replace(/\s/g, '');
+        }
+    
+        function findTags(term) {
+            console.log(term);
+    
+            var aux = 0;
+            var terms = [];
+            for (i = 0; i < options.length; i++) {
+                if (options[i].indexOf(term) != -1) {
+                    terms[aux] = options[i];
+                    aux++;
+                }
+    
+            }
+    
+            remove = false;
+            for (i = 0; i < changed.length; i++) {
+                if (changed[i].indexOf(term) != -1) {
+                    var errorMessage = $('div.error-message a');
+    
+                    var termInfo = changedMap[changed[i]];
+                    errorMessage.attr('href', termInfo.url);
+                    errorMessage.html(termInfo.content);
+    
+                    remove = true;
+                }
+            }
+    
+            return terms;
+        }
+    
+        function searchInTable(terms, term) {
+            $('li').addClass('hidden');
+            $("li.search").remove();
+            $(".remove").removeClass('remove');
+    
+            $('.info-text').removeClass("error-removed");
+            $('.info-text').removeClass("error");
+    
+            for (i = 0; i < terms.length; i++) {
+                $('li.' + terms[i]).removeClass('hidden');
+            }
+    
+    
+    
+            if ($('li:not(".hidden")').length == 0) {
+                console.log(remove);
+    
+                if (remove) {
+                    $('.info-text').addClass("error-removed");
+                    console.log("REMOVE");
+                } else
+                    $('.info-text').addClass("error");
+            }
+        }
+    </script>
