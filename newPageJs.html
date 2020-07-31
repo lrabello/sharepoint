@@ -1,1499 +1,354 @@
-
-<style>
-  /*
-  :root {
-  --color-white: #ffffff;
-  --color-black: #000000;
-  --color-atmo1: #F9F9F9;
-  --color-atmo2: #F5F5F5;
-  --color-atmo3: #F0F0F0;
-  --color-atmo4: #DEDEDE;
-  --color-atmo5: #BCBCBC;
-  --color-atmo6: #999999;
-  --color-atmo7: #414141;
-  --color-acce2: #146BD2;
-  --color-acce2h: #4389DB;
-  --color-acce3: #CC0000;
-  --color-acce1w: #EFEFEF;
-  --color-atmo1w: #393939;
-  --color-atmo2w: #424242;
-  --color-atmo3w: #494949;
-  --color-atmo4w: #545454;
-  --color-atmo5w: #626262;
-  --color-atmo6w: #2C2C2C;
-  --color-atmo7w: #919191;
-  --color-acce1w: #EFEFEF;
-
-  --color-light-blue: #4389DB;
-
-  --font-size-big-title: 32px;
-  --font-size-title: 22px;
-  --font-size-normal: 14px;
-  --font-size-info: 12px;
-  --s-space: 10px;
-  --m-space: 20px;
-  --l-space: 30px;
-  --xl-space: 60px;
-  --xxl-space: 90px;
-}
-*/
-:root {
-  --color-white: #ffffff;
-  --color-black: #000000;
-  --color-atmo1: #FBFCFC;
-  --color-atmo2: #F0F0F0;
-  --color-atmo3: #E8E8E8;
-  --color-atmo4: #CCCED0;
-  --color-atmo5: #999999;
-  --color-atmo6: #999999;
-  --color-atmo7: #414141;
-  --color-acce2: #146BD2;
-  --color-acce2h: #4389DB;
-  --color-acce3: #CC0000;
-  --color-acce1w: #EFEFEF;
-  --color-atmo1w: #393939;
-  --color-atmo2w: #424242;
-  --color-atmo3w: #494949;
-  --color-atmo4w: #545454;
-  --color-atmo5w: #626262;
-  --color-atmo6w: #2C2C2C;
-  --color-atmo7w: #919191;
-  --color-acce1w: #EFEFEF;
-
-  --color-light-blue: #4389DB;
-
-  --font-size-big-title: 32px;
-  --font-size-title: 22px;
-  --font-size-normal: 14px;
-  --font-size-info: 12px;
-  --s-space: 10px;
-  --m-space: 20px;
-  --l-space: 30px;
-  --xl-space: 60px;
-  --xxl-space: 90px;
-}
-body {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-  letter-spacing: 0.02em !important;
-  color: var(--color-atmo7) !important;
-  font-size: 14px !important;
-  line-height: 18px !important;
-}
-
-.text {
-  width: 70%;
-  line-height: 21px;
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-
-#ms-currentFeedLabel {
-  font-weight: 400;
-  font-size: 22px;
-  cursor: default;
-  color: var(--color-atmo7) !important;
-  font-family: "open sans", "helvetica neue", helvetica, arial, sans-serif;
-  letter-spacing: 0.02em;
-}
-
-#s4-workspace {
-  background-size: cover;
-  /*background-image: url(https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Images/header-default-desktop3.svg) !important;*/
-  background-color: #f0f0f0!important; /*NEW NAV*/
-  background-repeat: repeat-x;
-  background-position-x: center;
-  background-size: 100%;
-  z-index: 1;
-}
-
-#s4-titlerow {
-  display: none!important; /*NEW NAV*/
-}
-/********************************************** LATERAL NAVIGATION *************************************************/
-
-#sideNavBox {
-    background-color: var(--color-atmo1);
-    padding: 10px !important;
-    /*margin-left: 10px !important; */
-    margin-left: 0px!important;  /*NEW NAV*/
-    margin-right: 10px!important;
-    /*margin-top: 10px;*/
-    width: 225px!important; /*NEW NAV*/
-    top: 75px; /*NEW NAV*/
-    height: 100vh!important; /*NEW NAV*/
-    flex: 1; /*NEW NAV*/
-    margin-top: 70px!important; /*NEW NAV*/
-   /* top: 85px;*/  /*NEW NAV*/
-    bottom:0;  /*NEW NAV*/
-    /*position:fixed!important;*/  /*NEW NAV*/
-    overflow-y:scroll;  /*NEW NAV*/
-    overflow-x:hidden;  /*NEW NAV*/
-}
-div#contentBox {
-  /*min-width: 703px; */ /*NEW NAV*/
-  /*margin-left: 243px!important;  *//*NEW NAV*/
-  margin-right: 0;  /*NEW NAV*/
-}
-#sideNavBox ul {
-  margin-top: 103px!important;  /*NEW NAV*/
-}
-#sideNavBox a.static {
-  margin-left: 0px!important;  /*NEW NAV*/
-  /*margin-left: 30px!important; */ /*NEW NAV*/
-  /*margin-right: -20px!important;*//*NEW NAV*/
-  margin-bottom: 10px; /*NEW NAV*/
-  padding-top: 10px; /*NEW NAV*/
-  padding-bottom: 10px; /*NEW NAV*/
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-  letter-spacing: 0.02em;
-}
-#sideNavBox li:hover:not(.selected) a.static {
-  /*background-color: var(--color-atmo1)!important; */
-  /*margin-right: 20px; */ /*NEW NAV*/
-  background-color: var(--color-atmo3); /*NEW NAV*/
-  margin-right: 121px; /*NEW NAV*/
-  border-left: 2px solid #cc0000; /*NEW NAV*/
-}
-
-#sideNavBox li.ms-navedit-dropNode:hover:not(.selected) a.static {
-  /*background-color: var(--color-atmo1)!important; */
-  /*margin-right: 20px; */ /*NEW NAV*/
-  height: 12px; /*NEW NAV*/
-  background-color: var(--color-atmo1);
-}
-.ms-navedit-deletelink {
-  height: 30px;
-}
-
-li > a.ms-core-listMenu-item:hover, li > a.ms-core-listMenu-item:active {
-  background-color:  var(--color-atmo1);  /*NEW NAV*/
-/*  border-left: 2px solid #CC0000!important; /*NEW NAV*/
-}
-
-#sideNavBox a.static:hover {
-    /*margin-left: 28px!important;*/ /*NEW NAV*/
-    /*margin-right: 20px; *//*NEW NAV*/
-}
-#sideNavBox a.static {
-  /*margin-left: 30px!important;*/ /*NEW NAV*/
-}
-
-li.static {
-  margin-left: 30px;
-  margin-right: 30px;
-}
-li.static:hover {
-   background-color: var(--color-atmo1);/*NEW NAV*/
-    /*border-left: 2px solid #CC0000;*/ /*NEW NAV*/
-    margin: 0 30px; /*NEW NAV*/
-    margin-left: 32px; /*NEW NAV*/
-    width: 319px; /*NEW NAV*/
-}
-li.static.ms-listMenu-editLink.ms-navedit-editArea {
-  border: none; /*NEW NAV*/
-  margin-left: 30px; /*NEW NAV*/
-  margin-right: 30px; /*NEW NAV*/
-  margin-top: 30px;  /*NEW NAV*/
-}
-li.static.ms-navedit-dropNode {
-  margin-left: 0px; /*NEW NAV*/
-  margin-right: 0px; /*NEW NAV*/
-}
-table.ms-core-listMenuEdit {
-  height: 35px!important;/*NEW NAV*/
-}
-table.ms-core-listMenuEdit tr td {
-  width: 100%!important;/*NEW NAV*/
-}
-td.ms-navedit-linkCell {
-  width: 100%!important;/*NEW NAV*/
-}
-
-#sideNavBox .root > li:first-child, #sideNavBox .root > li:nth-child(1), #sideNavBox .root > li:nth-child(4), #sideNavBox .root > li:nth-child(10) {
-  border-bottom: 3px solid #e8e8e8!important; /*NEW NAV*/
-  width: 320px!important; /*NEW NAV*/
-  right: 0!important; /*NEW NAV*/
-  left: 0!important; /*NEW NAV*/
-  margin-left: 0!important; /*NEW NAV*/
-  padding-left: 30px!important; /*NEW NAV*/
-  padding-right: 20px!important;  /*NEW NAV*/
-}
-
-#sideNavBox .root > li:first-child a:hover, #sideNavBox .root > li:nth-child(1) a:hover, #sideNavBox .root > li:nth-child(4) a:hover, #sideNavBox .root > li:nth-child(10) a:hover {
-  margin-right: 121px!important;  /*NEW NAV*/
-  border-left: 2px solid #CC0000!important;  /*NEW NAV*/
-}
-span.category-tag {
-  float: right!important;  /*NEW TAG*/
-}
-.tag-filter {
-  margin-top: 5px;
-}
-.tag-filter span.category-tag {
-  float: left!important; /*NEW TAG*/
-  padding: 1px 10px; /*NEW TAG*/
-  padding-right: 30px;  /*NEW TAG*/
-  display: inline!important; /*NEW TAG*/
-  /*position: absolute!important; */ /*NEW TAG*/
-  line-height: 16px!important; /*NEW TAG*/
-  /*margin-top: -9px!important; *//*NEW TAG*/
-}
-.tag-filter {
-  margin-top: 5px; /*NEW TAG*/
-}
-.tag-filter span.category-tag img {
-  position: absolute;/*NEW TAG*/
-  /*top: 145px;*//*NEW TAG*/
-  top: 393px!important;
-}
-
-ul.patternCards .title  {
-  width: 100%!important;   /*NEW TAG*/
-}
-ul.patternCards .title .category-tag {
-  line-height: 16px!important;  /*NEW TAG*/
-  float: right;
-
-}
-.ms-core-listMenu-verticalBox > .ms-core-listMenu-item, .ms-core-listMenu-verticalBox li.static > .ms-core-listMenu-item  {
-  padding-left: 18px!important; /*NEW NAV*/
-}
-.ms-core-listMenu-verticalBox li.static > .ms-core-listMenu-item:hover {
-  padding-left: 16px!important; /*NEW NAV*/
-}
-#sideNavBox li.selected a.static {
-  /*background-color: var(--color-atmo7); */
-  /*color: var(--color-atmo1) !important; */
-}
-
-#sideNavBox .root > li:first-child,
-#sideNavBox .root > li:nth-child(1),
-#sideNavBox .root > li:nth-child(4),
-#sideNavBox .root > li:nth-child(10) {
-  margin-bottom: 13px;
-}
-
-div#sideNavBox {
-  /*padding-top: 20px!important; *//*NEW NAV*/
-  margin-left: 0px!important;  /*NEW NAV*/
-  overflow-x: hidden;
-}
-
-.ms-core-listMenuEdit:hover {
-    border: 1px dotted #999999; /*NEW NAV*/
-}
-/********************************************** CARDS *************************************************/
-
-.cards li.disabled:after {
-  background-color: white;
-  z-index: 1000;
-  position: absolute;
-  content: "Available soon";
-  text-align: center;
-  vertical-align: middle;
-  font-size: 22px;
-  padding-top: 145px;
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
-.cards li.hidden {
-  display: none;
-}
-
-.cards tr.remove,
-.cards li.remove {
-  display: none;
-}
-
-.team {
-  max-width: 700px;
-}
-
-#pageTitle {
-  display: none;
-}
-
-ul.cards li img:not(.ms-asset-icon) {
-  height: 130px;
-  margin-top: 20px !important;
-  margin-bottom: 10px !important;
-  width: calc(100% + 38px);
-  margin-left: -19px !important;
-  object-fit: cover;
-  object-position: 0 0;
-}
-
-ul.cards.patternCards li img:not(.ms-asset-icon) {
-  margin-bottom: 0px !important;
-  width: 319px;
-  margin-left: calc(50% - 163px) !important;
-  float: left;
-}
-
-ul.patternCards li.active:after {
-  position: absolute;
-  content: "";
-  left: 1px;
-  right: 21px;
-  /*height: calc(100% - 22px);*/
-  height: calc(100% - 40px); /*NEW TAG*/
-  top: 1px;
-  background-color: var(--color-atmo1)!important; /*NEW CARD*/
-  z-index: -1;
-}
-
-ul.patternCards tr td.wicked.active:after {
-  background-color: var(--color-atmo1w);
-  top: 1px;
-}
-
-ul.cards li img.right:not(.ms-asset-icon) {
-  object-position: 100% 0;
-}
-
-ul.cards li img.center:not(.ms-asset-icon) {
-  object-fit: none;
-  object-position: 50% 50%;
-}
-
-ul.cards li {
-  position: relative;
-  padding-right: 40px !important;
-  padding-left: 20px !important;
-  padding-top: 20px !important;
-  z-index: 10;
-  padding-bottom: 10px !important;
-}
-
-ul.patternCards li {
-  padding-bottom: 75px !important;
-}
-
-ul.patternCards.info li {
-  padding-bottom: 130px !important;
-}
-
-ul.cards li.active:before {
-  position: absolute;
-  top: 0px;
-  /*bottom: 20px;*/
-  bottom: 27px!important; /*NEW TAG*/
-  left: 0px;
-  right: 20px;
-  background-color: #fbfcfc!important; /*NEW CARD*/
-  /*border: 1px solid var(--color-atmo4);*/
-  border: 1px solid var(--color-atmo1)!important; /*NEW CARD*/
-  /*background-color: var(--color-atmo1);*/
-  z-index: -1;
-  content: "";
-}
-
-ul.cards li.wicked.active:before {
-  border: 1px solid var(--color-atmo4w);
-}
-
-ul.cards.not-hover li.active:before {
-  border: 0px;
-  border-left: 2px solid var(--color-acce3);
-}
-
-a.o365button {
-  color: black !important;
-}
-
-a,
-a:visited {
-  color: var(--color-acce2);
-}
-
-.wicked {
-  color: var(--color-acce1w);
-}
-
-.wicked a,
-.wicked a:visited {
-  color: var(--color-acce2h) !important;
-}
-
-ul.cards li a {
-  position: absolute;
-  bottom: 35px;
-}
-
-ul.cards .news li a {
-  position: relative !important;
-  bottom: 0 !important;
-}
-
-ul.cards li .box a {
-  height: 32px;
-  line-height: 32px;
-  width: auto;
-  padding-left: 10px;
-  padding-right: 10px;
-  display: inline-block;
-  text-align: center;
-  top: 0px;
-  margin-right: 10px;
-  color: var(--color-atmo7) !important;
-}
-
-ul.cards li .box a span {
-  color: var(--color-atmo7);
-}
-
-ul.cards li.wicked .box a,
-ul.cards li.wicked .box a span {
-  color: var(--color-acce1w);
-}
-
-ul.cards li .box a:active {
-  top: 1px;
-}
-
-ul.cards li .box-1 a:active {
-  bottom: 29px;
-}
-
-ul.cards li .box-1 {
-  width: calc(100% + 40px);
-  margin-left: -20px;
-  height: 32px;
-  line-height: 32px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  display: flex;
-  justify-content: flex-end;
-}
-
-ul.cards li .box-1 a {
-  bottom: 30px;
-  right: 30px;
-  width: auto;
-  margin-left: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  color: var(--color-atmo7);
-}
-
-ul.cards li .box-1 a span {
-  color: var(--color-atmo7);
-}
-
-ul.cards li .box-1 a:nth-child(2) {
-  left: 150px;
-}
-
-ul.cards li .box a:hover:after,
-ul.cards li.box-1 a:hover:after {
-  background-color: var(--color-atmo3);
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  right: 0px;
-  content: "";
-  z-index: -1;
-}
-
-ul.cards li.wicked .box a:hover:after,
-ul.cards li.wicked .box-1 a:hover:after {
-  background-color: var(--color-atmo3w);
-}
-
-ul.cards li .box a:hover:active:after,
-ul.cards li .box-1 a:hover:active:after {
-  top: -1px;
-}
-
-ul li .box {
-  width: calc(100% - 35px);
-  height: 32px !important;
-  position: absolute;
-  top: 205px;
-  left: 0px;
-  padding-left: 10px;
-  padding-right: 10px;
-  display: flex;
-  justify-content: flex-end;
-}
-
-ul li div.info {
-  position: absolute;
-  top: 205px;
-  left: 21px;
-  right: 21px;
-}
-
-ul li .info ~ .box {
-  top: 260px;
-}
-
-ul.cards li a.info {
-  height: 32px;
-  width: 32px;
-  position: absolute !important;
-  background-image: url(https://hitachidatasystems.sharepoint.com/sites/DesignSystem/SiteAssets/Images/Info.svg) !important;
-  right: 31px;
-  top: 16px;
-}
-
-ul.cards li a.info:hover {
-  background-color: var(--color-atmo3);
-}
-
-ul li .box a {
-  display: inline-block;
-  width: 50%;
-}
-
-ul.cards li .box .separator {
-  position: absolute;
-  top: 7px;
-  padding-left: 12px;
-  color: var(--color-atmo4);
-  height: 20px;
-  border-right: 1px solid #d1d2d3;
-}
-
-ul li {
-  cursor: default;
-}
-
-a:hover,
-a:active {
-  text-decoration: none !important;
-}
-
-ul li img.ms-asset-icon {
-  position: absolute;
-  top: 55px;
-  height: 24px !important;
-  width: 24px !important;
-  left: unset;
-  right: 46px;
-  margin: 0px !important;
-}
-
-ul li img.ms-asset-icon {
-  top: 4px !important;
-  right: unset;
-  display: none;
-}
-
-ul li.active {
-  min-width: 320px !important;
-}
-
-/*table.cards tr td:not(.disabled):hover:after{
-    border:1px solid #146bd2;;
-}*/
-
-ul.cards.patternCards a {
-  position: relative !important;
-  z-index: 1000;
-}
-
-ul.cards a:hover,
-ul.cards a:active {
-  text-decoration: none !important;
-  color: var(--color-acce2);
-}
-
-.ms-rteTable-default,
-.ms-rteTable-default > tbody > tr > td,
-.ms-rteTable-default > tbody > tr > th,
-td.ms-rteTable-default,
-th.ms-rteTable-default,
-.ms-rtetablecells,
-.ms-rteTable-default {
-  border: 0px !important;
-}
-
-.ms-microfeed-postBody {
-  font-size: 16px;
-}
-
-.ms-microfeed-userName,
-.ms-microfeed-postedTime,
-.ms-microfeed-button {
-  font-size: 12px;
-}
-
-.ms-tableCell:not(.ms-verticalAlignTop) .ms-imnSpan a {
-  width: 0px !important;
-}
-
-#siteIcon {
-  margin-right: 25px !important;
-  margin-left: -5px !important;
-}
-
-:focus {
-  outline: none !important;
-}
-
-.ms-core-listMenu-item,
-.ms-core-listMenu-item:link,
-.ms-core-listMenu-item:visited,
-.ms-tv-item:link,
-.ms-tv-item:visited,
-.ms-tv-header:link,
-.ms-tv-header:visited,
-.ms-navedit-editLinksText > span > .ms-metadata {
-  color: var(--color-atmo7) !important;
-}
-
-.ms-quicklaunchouter,
-.ms-core-listMenu-separatorLine {
-  display: none;
-}
-
-.ms-newsfeedpartdiv,
-.ms-microfeed-microblogpart,
-.ms-microfeed-feedPart {
-  max-width: 70% !important;
-}
-
-.ms-microfeed-postBody,
-.ms-microfeed-postBody.ms-textSmall {
-  font-size: 14px !important;
-}
-
-.ms-microfeed-rootText,
-.ms-microfeed-replyArea {
-  max-width: 100% !important;
-}
-
-.ms-microfeed-replyBackground {
-  background-color: var(--color-atmo1) !important;
-}
-
-a[title="Recycle Bin"] {
-  display: none !important;
-}
-
-ul.patternCards .title {
-  width: 100%;
-  float: left;
-  line-height: 20px;
-  height: 22px;
-}
-
-ul.patternCards .wicked .title {
-  color: var(--color-acce1w);
-}
-
-div#SearchBox {
-  display: none;
-}
-
-/********************************************** BACKLOG LIST *************************************************/
-
-ul.ms-listviewtable {
-  border: 1px solid var(--color-atmo5);
-  border-bottom: 0px;
-  table-layout: fixed;
-  width: 100%;
-  margin-top: 30px;
-  min-width: 1150px;
-}
-
-ul.ms-listviewtable th a,
-ul.ms-listviewtable th > div > span {
-  color: var(--color-text) !important;
-  font-weight: 600 !important;
-  text-indent: 26px;
-  display: inline-block;
-}
-
-ul.ms-listviewtable li > div.ms-tableCell {
-  height: 32px;
-  line-height: 32px;
-  padding: 0px;
-}
-
-ul.ms-listviewtable li > div:first-child,
-ul.ms-listviewtable li > span:first-child {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: block;
-  width: 100%;
-}
-
-ul.ms-listviewtable th a {
-  z-index: 1;
-  font-size: 12px;
-  display: block;
-  float: left;
-  width: 100%;
-  line-height: 32px;
-}
-
-ul.ms-listviewtable th {
-  background-color: var(--color-atmo4);
-  color: var(--color-text) !important;
-  position: relative;
-  z-index: 0;
-  height: 32px;
-  line-height: 32px;
-  font-size: 12px;
-  border-bottom: 1px solid var(--color-atmo5);
-}
-
-ul.ms-listviewtable th:hover {
-  background-color: var(--color-atmo3);
-}
-
-ul.ms-listviewtable th:hover div[sortable="FALSE"] {
-  background-color: var(--color-atmo4);
-}
-
-ul.ms-listviewtable th:hover a {
-  cursor: pointer;
-}
-
-ul.ms-listviewtable tr th:first-child,
-ul.ms-listviewtable li.ms-cellstyle:first-child {
-  width: 31%;
-}
-
-ul.ms-listviewtable li:first-child a.ms-listlink,
-.ms-webpart-chrome-title a {
-  color: var(--color-atmo7) !important;
-  pointer-events: none;
-  user-select: all;
-  cursor: initial;
-}
-
-.ms-webpart-chrome-title h2 > a {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-  font-size: var(--font-size-title);
-  color: var(--color-atmo7);
-  font-weight: 400;
-  display: none;
-}
-
-ul.ms-listviewtable th,
-ul.ms-listviewtable li[role="gridcell"] {
-  padding: 0px;
-  width: 9%;
-  border-bottom: 1px solid var(--color-atmo5);
-  border-left: 0px;
-  border-right: 0px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-ul.ms-listviewtable th:nth-child(4),
-ul.ms-listviewtable li[role="gridcell"]:nth-child(4) {
-  width: 10%;
-}
-
-ul.ms-listviewtable th:nth-child(2),
-ul.ms-listviewtable li[role="gridcell"]:nth-child(2),
-ul.ms-listviewtable th:nth-child(5),
-ul.ms-listviewtable li[role="gridcell"]:nth-child(5),
-ul.ms-listviewtable th:nth-child(3),
-ul.ms-listviewtable li[role="gridcell"]:nth-child(3) {
-  width: 12%;
-}
-
-ul.ms-listviewtable th:nth-child(6),
-ul.ms-listviewtable li[role="gridcell"]:nth-child(6) {
-  width: 14%;
-}
-
-ul.ms-listviewtable .ms-list-itemLink {
-  position: absolute;
-  left: 10px;
-  width: 6px;
-  height: 10px;
-  height: 32px !important;
-  top: calc(50% - 17px);
-}
-
-ul.ms-listviewtable .ms-list-itemLink a {
-  background-image: url(https://hitachidatasystems.sharepoint.com/sites/DesignSystem/SiteAssets/Images/arrows_table.svg) !important;
-  background-repeat: repeat-x;
-  background-position-x: center;
-  background-position: 6px 0px;
-  width: 6px;
-}
-
-ul.ms-listviewtable li.ms-cellstyle {
-  font-size: var(--font-size-info);
-  padding-right: 10px;
-  padding-left: 26px;
-}
-
-ul.ms-listviewtable th span.ms-sortarrowup-iconouter,
-ul.ms-listviewtable th span.ms-sortarrowdown-iconouter {
-  position: unset;
-}
-
-ul.ms-listviewtable th .ms-positionRelative,
-ul.ms-listviewtable th .ms-core-menu-box,
-ul.ms-listviewtable th span.ms-sortarrowup-iconouter img,
-ul.ms-listviewtable th span.ms-sortarrowdown-iconouter img,
-ul.ms-listviewtable li .ms-spimn-presenceWrapper,
-ul.ms-listviewtable li .ms-newdocument-iconouter,
-ul.ms-listviewtable .ms-ellipsis-icon,
-ul.ms-listviewtable .ms-inlineSearch-searchImgSpanBase {
-  display: none;
-}
-
-ul.ms-listviewtable th span.ms-sortarrowup-iconouter:after,
-ul.ms-listviewtable th span.ms-sortarrowdown-iconouter:after {
-  position: absolute;
-  content: "";
-  left: 0px;
-  right: 0px;
-  width: 100%;
-  background-color: var(--color-atmo1);
-  top: 0px;
-  height: 32px;
-  z-index: -2;
-}
-
-ul.ms-listviewtable th span:before {
-  position: absolute;
-  content: "";
-  top: 6px;
-  bottom: 6px;
-  left: 10px;
-  width: 6px;
-  height: 20px;
-  z-index: -1;
-}
-
-ul.ms-listviewtable th:hover a:before {
-  position: absolute;
-  content: "";
-  top: 6px;
-  bottom: 6px;
-  left: 10px;
-  width: 6px;
-  height: 20px;
-  background: url(
-      https://hitachidatasystems.sharepoint.com/sites/DesignSystem/SiteAssets/Images/arrows_table.svg
-    )no-repeat0px5px;
-  content: "";
-}
-
-ul.ms-listviewtable th span.ms-sortarrowup-iconouter:before {
-  background: url(
-      https://hitachidatasystems.sharepoint.com/sites/DesignSystem/SiteAssets/Images/arrows_table.svg
-    )no-repeat-12px5px;
-  content: "";
-}
-
-ul.ms-listviewtable th span.ms-sortarrowdown-iconouter:before {
-  background: url(
-      https://hitachidatasystems.sharepoint.com/sites/DesignSystem/SiteAssets/Images/arrows_table.svg
-    )no-repeat-6px5px;
-  content: "";
-}
-
-ul.ms-listviewtable .ms-vb,
-ul.ms-listviewtable .ms-vb2,
-ul.ms-listviewtable .ms-vb-user,
-ul.ms-listviewtable .ms-vb-tall,
-ul.ms-listviewtable .ms-pb,
-ul.ms-listviewtable .ms-pb-selected,
-ul.ms-listviewtable .ms-vb-title {
-  vertical-align: middle;
-}
-
-ul.ms-listviewtable tr:hover > td {
-  background-color: transparent;
-}
-
-ul.ms-listviewtable .ms-list-TitleLink {
-  width: 100%;
-}
-
-ul.ms-bottompaging {
-  width: 100%;
-}
-
-/********************************************* SEARCH IN TABLE *******************************************/
-
-
-input.ms-InlineSearch-SearchBox-Baseline.ms-InlineSearch-SearchBox-Baseline {
-  padding: 0px !important;
-  padding-left: 10px !important;
-  padding-right: 32px !important;
-  max-width: 610px;
-  min-width: 150px;
-  width: 200px;
-  height: 30px;
-  margin-bottom: 5px;
-  border: 1px solid var(--color-atmo6);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-div.ms-InlineSearch-DivBaseline-NoView,
-div.ms-InlineSearch-Outline-Baseline.ms-InlineSearch-Outline-Empty,
-div.ms-InlineSearch-Outline-Baseline.ms-InlineSearch-Outline-Focused,
-div.ms-InlineSearch-Outline-Baseline.ms-InlineSearch-Outline-Filled {
-  border: 0px;
-  margin-left: 0px;
-  padding-left: 0px;
-}
-
-div.ms-InlineSearch-Outline-Baseline.ms-InlineSearch-Outline-Empty,
-div.ms-InlineSearch-Outline-Baseline.ms-InlineSearch-Outline-Focused,
-div.ms-InlineSearch-Outline-Baseline.ms-InlineSearch-Outline-Filled {
-  position: relative;
-  width: 230px;
-}
-
-input:hover {
-  border-color: var(--color-atmo7) !important;
-  cursor: text;
-}
-
-input:focus {
-  outline: none;
-  border-color: var(--color-atmo7) !important;
-}
-
-input::placeholder {
-  color: var(--color-atmo6);
-  font-size: var(--font-size-info);
-  font-weight: 400 !important;
-}
-
-.input .label {
-  font-size: var(--font-size-info) !important;
-  font-weight: 600 !important;
-  color: var(--color-atmo7);
-  display: block;
-  text-align: unset;
-  margin-bottom: var(--s-space);
-  padding: 0px;
-}
-
-div.ms-InlineSearch-Outline-Baseline input + .icon {
-  top: 0px;
-  right: 0px;
-}
-
-input + .icon {
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  margin-left: -32px;
-  background: url(
-      https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Images/input_icons.svg
-    )no-repeat-32px0px;
-  background-size: cover;
-}
-
-input.filled + .icon,
-input + .icon.filled {
-  background: url(
-      https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Images/input_icons.svg
-    )no-repeat0px0px;
-  background-size: cover;
-}
-
-input.filled + .icon:hover,
-input + .icon.filled:hover {
-  cursor: pointer;
-}
-
-.input:placeholder {
-  color: var(--color-atmo7);
-}
-
-span.ms-inlineSearch-searchImgSpanBase img,
-div.ms-InlineSearch-SearchProgress img {
-  display: none;
-}
-  
-input[type=text] {
-    border: none;
-    border-bottom: 1px solid #CCCED0;
-    border-radius: 2px;
-    background-color: #fbfcfc;
-}
-
-/********************************************* LIST IN TABLE *******************************************/
-
-.ms-contextmenu-box.ms-js-contextmenu li {
-  height: 32px;
-}
-
-.ms-contextmenu-box.ms-js-contextmenu li a {
-  padding-left: 10px;
-  padding-right: 10px;
-  font-size: var(--font-size-normal);
-  height: 32px;
-  line-height: 32px;
-  padding: 0px 10px 0px 10px;
-  position: relative;
-  color: var(--color-atmo7) !important;
-}
-
-.ms-contextmenu-box.ms-js-contextmenu li a .ms-contextmenu-right-glyph {
-  margin-top: 0px;
-  visibility: hidden;
-}
-
-.ms-contextmenu-box.ms-js-contextmenu li a[title="Advanced"]:after {
-  content: ">";
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  right: 10px;
-  width: 10px;
-}
-
-.ms-contextmenu-box.ms-js-contextmenu li a:hover {
-  background-color: var(--color-atmo4);
-}
-
-.ms-contextmenu-box.ms-js-contextmenu ~ .ms-contextmenu-box.ms-js-contextmenu {
-  margin-left: 2px;
-}
-
-.ms-contextmenu-box {
-  box-shadow: none !important;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-  border-color: var(--color-atmo4);
-}
-
-.ms-contextmenu-box.ms-js-contextmenu li[aria-label="Version History"],
-.ms-contextmenu-box.ms-js-contextmenu li[aria-label="View Item"],
-.ms-contextmenu-box.ms-js-contextmenu li[aria-label="Shared With"],
-.ms-contextmenu-box.ms-js-contextmenu li[aria-label="Compliance Details"],
-.ms-contextmenu-box.ms-js-contextmenu li[aria-label="Follow"],
-.ms-contextmenu-box.ms-js-contextmenu li[aria-label="Workflows"] {
-  display: none;
-}
-
-.ms-contextmenu-separator {
-  display: none;
-}
-
-.ms-list-addnew {
-  display: none;
-}
-
-.ms-webpartzone-cell {
-  margin-bottom: 0px !important;
-}
-
-/********************************************* TABS *******************************************/
-
-.tabs {
-  table-layout: fixed;
-  display: table;
-  width: 100%;
-  margin-top: 60px;
-}
-
-.tabs > div {
-  min-width: 70px;
-  border-top: 1px solid var(--color-atmo7);
-  position: relative;
-  display: table-cell;
-}
-
-.tabs > div > div {
-  background-color: transparent;
-  border: 0px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-left: 0px;
-  line-height: 42px;
-  font-size: var(--font-size-normal) !important;
-  font-weight: 300 !important;
-  color: var(--color-atmo7);
-  max-width: 100%;
-  width: 100%;
-  text-align: center;
-  font-size: 22px !important;
-}
-
-.tabs > div.selected > div {
-  font-weight: 400 !important;
-}
-
-.tabs > div.selected:after {
-  content: "";
-  position: absolute;
-  top: 0px;
-  height: 8px;
-  background-color: var(--color-atmo7);
-  width: 100%;
-  left: 0px;
-}
-
-.tabs > div:hover > div {
-  background-color: var(--color-atmo3);
-  cursor: pointer;
-}
-
-/******************************* DISCLAIMER ******************************************/
-
-.disclaimer {
-  position: fixed;
-  font-size: 12px;
-  background-color: #F9E7CF !important;
-  display: block;
-  padding-left: 30px;
-  padding-right: 30px;
-  line-height: 32px;
-  height: 32px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  z-index: 100;
-  color: var(--color-atmo7);
-}
-
-@media only screen and (max-width: 1360px) {
-  .disclaimer {
-    bottom: 10px;
-  }
-}
-
-.ms-rte-layoutszone-inner {
-  margin-top: 0 !important;
-}
-
-/******************************* TOOOGLE ******************************************/
-
-.toggleButton li {
-  height: 32px;
-  position: relative;
-}
-
-.toggleButton ul {
-  margin-bottom: 0px;
-}
-
-.toggleButton input[type="checkbox"] {
-  width: 0px;
-  height: 0px;
-  visibility: hidden;
-  position: relative;
-  margin: 0px;
-  cursor: pointer;
-}
-
-.toggleButton input ~ div.icon:after {
-  border-radius: 20px;
-  visibility: initial;
-  content: "";
-  position: absolute;
-  top: 8px;
-  left: 0px;
-  background-color: var(--color-atmo4);
-  width: 32px;
-  height: 16px;
-}
-
-.toggleButton input:checked ~ div.icon:after {
-  background-color: var(--color-atmo7);
-  content: "";
-}
-
-.toggleButton.disabled input ~ div.icon:after {
-  background-color: var(--color-atmo4);
-}
-
-.toggleButton input ~ div.icon:before {
-  position: absolute;
-  content: "";
-  height: 14px;
-  width: 14px;
-  left: 1px;
-  top: 9px;
-  background-color: var(--color-atmo7);
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  visibility: visible;
-  z-index: 10;
-  border-radius: 50%;
-}
-
-.toggleButton input:checked ~ div.icon:before {
-  content: "";
-  -webkit-transition: 0.5s;
-  transition: background-color 0.5s ease, transform 0.5s ease;
-  transform: translateX(15px);
-  background-color: var(--color-atmo1);
-}
-
-.toggleButton label {
-  padding-top: 28px;
-  cursor: pointer;
-  position: absolute;
-  top: 0px;
-  font-weight: 400;
-  left: -5px;
-  z-index: 11;
-  text-transform: capitalize;
-}
-
-.toggleButton.disabled label,
-.toggleButton.disabled input {
-  pointer-events: none;
-  color: var(--color-atmo6);
-}
-
-ul {
-  list-style-type: none;
-}
-
-.toggleButton {
-  position: absolute;
-  top: 0px;
-  right: 75px;
-}
-
-.designSystemContent .principles {
-  font-size: 14px;
-  display: block;
-  margin-bottom: 25px;
-}
-
-div.title {
-  display: flex;
-}
-
-.ui-kit,
-.ui-kit-small {
-  /*background-color: #F9E7CF;*/
-  background-color: #D3E3F6;
-  border: 1px;
-  line-height: 32px;
-  padding-left: 20px;
-  height: 32px;
-  letter-spacing: 0.02em;
-  width: calc(100% - 40px);
-}
-
-.ui-kit-small {
-  width: auto;
-  margin-left: auto;
-  padding-right: 20px;
-  margin-right: 16px;
-  top: -10px;
-  position: relative;
-  white-space: nowrap;
-}
-
-.ui-kit a,
-.ui-kit-small a {
-  font-weight: 400;
-  color: var(--color-inspire-gray) !important;
-}
-
-.faq {
-  width: 70%;
-}
-
-.faq span {
-  font-size: 14px;
-  line-height: 20px;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-}
-
-.faq img.margin {
-  margin-bottom: -5px;
-  width: 70px;
-}
-
-.faq .title span {
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 28px;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-}
-
-#DeltaPageStatusBar {
-  display: none !important;
-}
-
-@media only screen and (max-width: 1800px) {
-  ul.patternCards li {
-    flex: 0 0 27.333333%!important;
-  }
-  ul li.active {
-    min-width: 300px!important;
-  }
-}
-@media only screen and (max-width: 1394px) {
-  ul.patternCards {
-    width: 1140px;
-  }
-
-  ul li.active {
-    min-width: 320px !important;
-  }
-
-  ul.patternCards li {
-    flex: 0 0 27.333333%;
-  }
-}
- .category-tag {
-    font-size: 10px; /*NEW TAG*/
-    margin-right: 6px;
-    /*margin:0 10px 10px 0;*/
-    padding: 0 10px;
-    white-space: nowrap;
- }
- .category-tag:hover {
-    cursor: pointer;
- }
- .blue-tag {
-    background-color: #D3E3F6;
- }
- .orange-tag {
-    background-color: #F9E3C5;
- }
- .green-tag {
-    background-color: #DFECD1;
- }
- .red-tag {
-    background-color: #F5D8D8;
- }
- ul.patternCards .title {
-    margin-bottom: 4px;
- }
- ul li .box {
-    top: auto!important;
-    bottom: 40px!important;
- }
-
- ul.cards li img:not(.ms-asset-icon) {
-    margin-top: 0!important;
- }
-
- /********************************************* NEW HEADER *******************************************/
-
-#main-header {
-    position: fixed;
-    height: 26px;
-    background-color: #fbfcfc;
-    border-top: 4px solid #cc0000;
-    padding: 20px;
-    top: 85px;
-    right: 0;
-    left: 0;
-    z-index: 999;
-    box-shadow: 0 2px 12px rgba(65,65,65,0.12);
-}
-p.app-name {
-    font-size: 12px;
-    font-weight: 600;
-    display: inline-block!important;
-    margin-left: 16px;
-}
-.app-name img {
-   width: 100px; 
-} 
-span.divider {
-    display: block;
-    height: 20px;
-    width: 1px;
-    margin: 0 10px;
-    background-color: #414141;
-    position: absolute;
-    top: 20px;
-} 
-span.divider, .hv-logo {
-    display: inline-block;
-}
-.hv-logo {
-    /*padding-top: 6px;*/
-}
-#sideNavBox ul {
-  margin-top: 103px!important;  /*NEW NAV*/
-  padding-bottom: 80px;
-}
-div#sideNavBox {
-  padding-top: 90px!important; /*NEW NAV*/
-}
-div#contentBox {
-   /* margin-left: 243px!important; */ /*NEW NAV*/
-}
- /********************************************* CONTENT HEADER *******************************************/
-article {
-    /*margin-top: 30px;*/
-}
-article header {
-    background-color: rgba(204, 204, 204, 0.1);
-    padding: 20px 30px;
-    height: 300px;
-    margin-left: -30px!important;
-    text-align: center;
-    padding-top: 50px;
-}
-article header h1 {
-    font-family: 'Open Sans', sans-serif;
-    color: #414141!important;
-    font-size: 42px;
-    font-weight: 600;
+<head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <style>
+    input {
+                padding: 0px !important;
+                padding-left: 10px !important;
+                padding-right: 32px !important;
+                max-width: 610px;
+                min-width: 150px;
+                width: 200px;
+                height: 30px;
+                margin-bottom: 5px;
+                border: 1px solid var(--color-atmo6);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            
+            .search {
+                margin-top: -111px!important;
+                margin-left: calc(50% - 180px);
+            }
+            .search input {
+                width: 326px;
+            }
+            .search input:hover {
+                border-color: var(--color-atmo7) !important;
+                cursor: text;
+            }
+            
+            .search input:focus {
+                outline: none;
+                border-color: var(--color-atmo7) !important;
+            }
+            
+            input::placeholder {
+                color: var(--color-atmo6);
+                font-size: var(--font-size-info);
+                font-weight: 400 !important;
+            }
+            
+            .input .label {
+                font-size: var(--font-size-info) !important;
+                font-weight: 600 !important;
+                color: var(--color-atmo7);
+                display: block;
+                text-align: unset;
+                margin-bottom: var(--s-space);
+                padding: 0px;
+            }
+            
+            input+.icon {
+                position: absolute;
+                width: 32px;
+                height: 32px;
+                margin-left: -32px;
+                background: url("https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Images/input_icons.svg") no-repeat -32px 0px;
+                background-size: cover;
+            }
+            
+            input.filled+.icon {
+                background: url("https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Images/input_icons.svg") no-repeat 0px 0px;
+                background-size: cover;
+            }
+            
+            input.filled+.icon:hover {
+                cursor: pointer;
+            }
+            
+            input.filled .icon:hover {
+                cursor: pointer;
+            }
+            
+            .info-text+.error-message {
+                display: none;
+            }
+            
+            .info-text+.error-message a {
+                color: var(--color-atmo7) !important;
+            }
+            
+            .info-text.error-removed+.error-message {
+                display: block;
+                width: auto;
+                font-size: var(--font-size-info);
+                top: 0px;
+                left: 0px;
+                color: var(--color-atmo6) !important;
+            }
+            
+            .info-text.error:before {
+                content: "No results found. Try again later, you might get lucky!";
+                width: auto;
+                font-size: var(--font-size-info);
+                top: 0px;
+                left: 0px;
+                color: var(--color-atmo6);
+            }
+            
+            .input:placeholder {
+                color: var(--color-atmo6);
+            }
+            
+            td {
+                width: 33.3% !important;
+            }
+            
+          
+          ul.patternCards {
+              display: flex;
+              flex-wrap: wrap;
+              padding-left: 0;
+          }
+          ul.patternCards li {
+            list-style: none;
+            flex: 0 0 29.333333%;
+            /*border: 1px solid #444444;*/
+          }
     
-}
-article header p {
-    width: 750px;
-    text-align: initial;
-    margin-left: calc(50% - 370px)!important;
-}
-div.ms-wikicontent.ms-rtestate-field {
-    padding-right: 0!important;
-    margin-right: -10px!important;
-}
-span.horizontal-divider {
-    display: block;
-    height: 1px;
-    width: 20px;
-    margin: 30px 0px;
-    background-color: #414141;  
-    margin-left: calc(50% - 15px);  
-}
-img.brand-pattern {
-    right: -22px;
-    /*top: 80px;*/
-    margin-right: 0px;
-    position: relative;
-    float: right;
-    bottom: 40px;    
-}
+          .ms-rte-layoutszone-inner {
+             margin: 0!important;
+          }
+                
+         input[type=text] {
+            border: none;
+            border-bottom: 1px solid #CCCED0;
+            border-radius: 2px;
+         }
+        </style>
+    </head>
+    
+    <body>
+        <div class="search">
+            <div class="label"> </div>
+            <input class="input" type="text" placeholder="Search..." name="fname">
+            <span class="icon"></span>
+            <div class="info-text"></div>
+            <div class="error-message">This pattern has changed to
+                <a href="#"> </a></div>
+        </div>
+        <div class="tag-filter">
+          <!--  <span class="category-tag green-tag">Retail <img src="https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Iconography/XS_D/Close.XS_D.svg"/></span>
+            <span class="category-tag blue-tag">Manufacturing <img src="https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Iconography/XS_D/Close.XS_D.svg"/></span>
+            <span class="category-tag orange-tag">Transportation and Logistics <img src="https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Iconography/XS_D/Close.XS_D.svg"/></span>
+        -->
+        </div>
+    </body>
+    
+    </html>
+    <script>
+        var options = ["file", "uploader", "about", "help", "screen", "selection", "radiobutton", "toggle", "checkbox", "badges", "timepicker", "range", "cardsview", "login", "listview", "assetinventory", "multibuttons", "segmentedcontrol", "inline", "editing", "map", "marker", "bulkactions", "textcapitalization", "wizard", "stepper", "loading", "component", "tooltip", "slider", "control", "searchbox", "date", "range", "controls", "legends", "lists", "cards", "images", "views", "filterspanel", "visualizations", "globalactions", "horizontaltabs", "scroll", "dateformat", "buttons", "emptystates", "notifications", "modals", "banner", "snackbar", "alerts", "error", "form", "pagination", "horizontal", "verticalnavigation", "horizontalnavigation", "dropdown", "header", "input", "textarea", "breadcrumb", "installer", "item", "another", "cookies", "consent", "gdpr", "modal", "overlay", "splash", "toggle", "scroll", "selection", "vertical", "horizontal", "navigation", "menu", "notification", "app", "switcher", "list", "view", "accordion", "action", "bar", "drag", "drop", "filter", "group", "panel", "scheduler", "statustracker", "tracker", "tags", "upward", "navigation", "back", "secondary", "user", "preferences", "facet", "extended", "footer", "preferences", "full", "name", "rich", "text", "editor", "shortcuts", "toolbar", "visual", "flow", "designer", "zoom", "add", "new", "add new item", "another", "launcher", "details", "section", "feeder", "logs", "tool", "tree", "page", "titles", "panels", "dialog", "codeeditor", "commentsection", "specs", "manufacturing", "automotive", "bankingandfinancials"];
 
- /********************************************* CONTENT  *******************************************/
- article section.main-content {
-    margin-top: 43px;
-}
+        var changed = ["table", "kpis"];
+        var changedMap = {
+            "table": {
+                url: "https://hitachivantara.sharepoint.com/sites/DesignSystem/Visualization%20Library/Home.aspx",
+                content: "Visualization Library"
+            },
+            "kpis": {
+                url: "https://hitachivantara.sharepoint.com/sites/DesignSystem/Visualization%20Library/Home.aspx",
+                content: "Visualization Library"
+            }
+        };
+    
+        $(document).ready(function() {
+    
+            $("li.search").remove();
+            $('.remove').removeClass('remove');
+            $('.hidden').removeClass('hidden');
+            var remove = false;
+    
+            let searchParams = new URLSearchParams(window.location.search);
+            if (searchParams.has('search')) {
+                searchInTable(findTags(fixValue(searchParams.get('search'))));
+                //content = $('td.' + fixValue(searchParams.get('search'))+' .title').html();
+                $(".input").val(searchParams.get('search'));
+            }
+    
+        });
+    
+        $(".input + .icon").mousedown(function() {
+    
+            if ($(".input").hasClass("filled")) {
+                $(".input").val("");
+                $(".input").removeClass("filled");
+                searchInTable(findTags(""));
+            }
+    
+            $('.info-text').removeClass("error");
+    
+        });
+    
+        $("ul.cards .category-tag").on('click',(e) => {
 
- /*********************************************  TEST  *******************************************/
+            const currentSpan = $(e.currentTarget);
+            const closestLi = currentSpan.closest('li');
+            const rawTag = currentSpan.html();
+            const tag = currentSpan.html().split(' ').join('').toLowerCase();
+/*
+            if(closestLi.hasClass('filtered')) {
 
-#contentRow {
-  padding-top: 0!important;
-}
-div#contentBox {
-  margin-left: 0!important;
-}
+                $(`li.${tag}`).removeClass('filtered');
+                searchInTable(findTags(""));
 
-#main-header {
-  position: relative!important;
-  top: 0!important;
-  margin-top: -20px;
-}
-</style>
+                $('.tag-filter').html("");
+
+            } else {
+                
+                $('li').addClass('hidden');
+                $('li').addClass('remove');
+
+                $(`li.${tag}`).removeClass('remove');
+                $(`li.${tag}`).removeClass('hidden');
+
+                $(`li.${tag}`).addClass('filtered');
+
+                $('.tag-filter').append(currentSpan.clone().append(' <img src="https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Iconography/XS_D/Close.XS_D.svg"/>'));
+                console.log('FORA')
+            }*/
+            if (!closestLi.hasClass('filtered')) {
+                $('li').addClass('hidden');
+                $('li').addClass('remove');
+
+                $(`li.${tag}`).removeClass('remove');
+                $(`li.${tag}`).removeClass('hidden');
+
+                $(`li.${tag}`).addClass('filtered');
+
+                $('.tag-filter').append(currentSpan.clone().append(' <img src="https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Iconography/XS_D/Close.XS_D.svg"/>'));
+                
+                console.log('NOW?')
+            }
 
 
+
+        })
+
+        $("body").on('click','.tag-filter .category-tag',(e) => { 
+            
+            const currentSpan = $(e.currentTarget);
+            const tagArray = currentSpan.html().split(' ');
+            const tag = tagArray.slice(0, tagArray.length-2).join('').toLowerCase();
+            //const tag = currentSpan.html().split(' ').join('').toLowerCase();
+
+            $(`li.${tag}`).removeClass('filtered');
+                searchInTable(findTags(""));
+
+            $('.tag-filter').html("");
+
+            //console.log('FUNCIONA')
+        })
+
+        $(".input").keydown(function(e) {
+            if (e.keyCode == 13) // enter key
+            {
+                $('input').blur();
+                return false;
+            }
+        });
+    
+        $(".input").keyup(function() {
+    
+            $(".input").removeClass("filled");
+    
+            if ($(".input").val().length > 0) {
+                $(".input").addClass("filled");
+    
+            }
+    
+        });
+    
+        $(".input").focusout(function() {
+    
+            $(".input").removeClass("filled");
+    
+        });
+    
+        $(".input").focusin(function() {
+    
+            if ($(".input").val().length > 0) {
+                $(".input").addClass("filled");
+            }
+    
+        });
+    
+        $("input").on("input", function() {
+            searchInTable(findTags(fixValue($('input.input').val())));
+        });
+    
+    
+        $('.button').click(function() {
+            if (jQuery.inArray($('input.input').val(), options) != -1) {
+                searchInTable($('input.input').val());
+            }
+        });
+    
+        function fixValue(value) {
+            return value.toLowerCase().replace(/\s/g, '');
+        }
+    
+        function findTags(term) {
+            console.log(term);
+    
+            var aux = 0;
+            var terms = [];
+            for (i = 0; i < options.length; i++) {
+                if (options[i].indexOf(term) != -1) {
+                    terms[aux] = options[i];
+                    aux++;
+                }
+    
+            }
+    
+            remove = false;
+            for (i = 0; i < changed.length; i++) {
+                if (changed[i].indexOf(term) != -1) {
+                    var errorMessage = $('div.error-message a');
+    
+                    var termInfo = changedMap[changed[i]];
+                    errorMessage.attr('href', termInfo.url);
+                    errorMessage.html(termInfo.content);
+    
+                    remove = true;
+                }
+            }
+    
+            return terms;
+        }
+    
+        function searchInTable(terms, term) {
+            $('li').addClass('hidden');
+            $("li.search").remove();
+            $(".remove").removeClass('remove');
+    
+            $('.info-text').removeClass("error-removed");
+            $('.info-text').removeClass("error");
+    
+            for (i = 0; i < terms.length; i++) {
+                $('li.' + terms[i]).removeClass('hidden');
+            }
+    
+    
+    
+            if ($('li:not(".hidden")').length == 0) {
+                console.log(remove);
+    
+                if (remove) {
+                    $('.info-text').addClass("error-removed");
+                    console.log("REMOVE");
+                } else
+                    $('.info-text').addClass("error");
+            }
+        }
+    </script>
