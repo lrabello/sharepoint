@@ -238,11 +238,11 @@
             
             const currentSpan = $(e.currentTarget);
             const tagArray = currentSpan.html().split('<span></span>');
-            const tag = tagArray.slice(0, tagArray.length-2).join('').toLowerCase();
+            const tag = tagArray[0].split(' ').join('').toLowerCase();
             //const tag = currentSpan.html().split(' ').join('').toLowerCase();
 
             $(`li.${tag}`).removeClass('filtered');
-                searchInTable(findTags(""));
+            searchInTable(findTags(""));
 
             $('.tag-filter').html("");
 
