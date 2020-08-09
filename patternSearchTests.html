@@ -1,7 +1,7 @@
 <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <style>
-    input {
+            input {
                 padding: 0px !important;
                 padding-left: 10px !important;
                 padding-right: 32px !important;
@@ -105,33 +105,46 @@
             }
             
           
-          ul.patternCards {
-              display: flex;
-              flex-wrap: wrap;
-              padding-left: 0;
-          }
-          ul.patternCards li {
-            list-style: none;
-            flex: 0 0 29.333333%;
-            /*border: 1px solid #444444;*/
-          }
-    
-          .ms-rte-layoutszone-inner {
-             margin: 0!important;
-          }
+            ul.patternCards {
+                display: flex;
+                flex-wrap: wrap;
+                padding-left: 0;
+            }
+            ul.patternCards li {
+                list-style: none;
+                flex: 0 0 29.333333%;
+                /*border: 1px solid #444444;*/
+            }
+
+            .ms-rte-layoutszone-inner {
+                margin: 0!important;
+            }
                 
-         input[type=text] {
-            border: none;
-            border-bottom: 1px solid #CCCED0;
-            border-radius: 2px;
-         }
+            input[type=text] {
+                border: none;
+                display:inline-block;
+                padding:5px;
+            }
+
+            input:focus {
+                outline-width:0;
+            }
+
+            .inputholder {
+                border-bottom: 1px solid #CCCED0;
+                border-radius: 2px;
+                padding:5px;
+            }
         </style>
     </head>
     
     <body>
         <div class="search">
             <div class="label"> </div>
-            <input class="input" type="text" placeholder="Search..." name="fname">
+            <!-- <input class="input" type="text" placeholder="Search..." name="fname"> -->
+            <div class="inputholder">
+                <input class="input" type="text" placeholder="Search..." name="fname">
+            </div>
             <span class="icon"></span>
             <div class="info-text"></div>
             <div class="error-message">This pattern has changed to
@@ -225,8 +238,9 @@
 
                 $(`li.${tag}`).addClass('filtered');
 
-                $('.tag-filter').append(currentSpan.clone().append('<span></span><img src="https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Iconography/XS_D/Close.XS_D.svg"/>'));
-                
+                //$('.tag-filter').append(currentSpan.clone().append('<span></span><img src="https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Iconography/XS_D/Close.XS_D.svg"/>'));
+                $('.input').before(currentSpan.clone().append('<span></span><img src="https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Iconography/XS_D/Close.XS_D.svg"/>'));
+
                 console.log('NOW?')
             }
 
@@ -234,7 +248,11 @@
 
         })
 
-        $("body").on('click','.tag-filter .category-tag',(e) => { 
+        $('.inputholder').click(function() { 
+    	    $('.input').focus(); 
+        });
+
+        $("body").on('click','.search .category-tag',(e) => { 
             
             const currentSpan = $(e.currentTarget);
             const tagArray = currentSpan.html().split('<span></span>');
