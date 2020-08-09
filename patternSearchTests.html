@@ -225,7 +225,7 @@
 
                 $(`li.${tag}`).addClass('filtered');
 
-                $('.tag-filter').append(currentSpan.clone().append(' <img src="https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Iconography/XS_D/Close.XS_D.svg"/>'));
+                $('.tag-filter').append(currentSpan.clone().append('<span></span><img src="https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Iconography/XS_D/Close.XS_D.svg"/>'));
                 
                 console.log('NOW?')
             }
@@ -237,7 +237,7 @@
         $("body").on('click','.tag-filter .category-tag',(e) => { 
             
             const currentSpan = $(e.currentTarget);
-            const tagArray = currentSpan.html().split(' ');
+            const tagArray = currentSpan.html().split('<span></span>');
             const tag = tagArray.slice(0, tagArray.length-2).join('').toLowerCase();
             //const tag = currentSpan.html().split(' ').join('').toLowerCase();
 
