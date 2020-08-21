@@ -231,7 +231,7 @@
                 console.log('FORA')
             }*/
             if (!closestLi.hasClass('filtered')) {
-                console.log("NOVO");
+                console.log("again");
                 $('li').addClass('hidden');
                 $('li').addClass('remove');
 
@@ -269,6 +269,10 @@
             $('.tag-filter').html("");
 
             currentSpan.remove();
+            $(".input").attr("disabled", false);
+            $(".input").removeClass("filled");
+            $('.input').focus(); 
+
 
             //console.log('FUNCIONA')
         })
