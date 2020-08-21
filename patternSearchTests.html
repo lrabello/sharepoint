@@ -196,7 +196,9 @@
                 $(".input").val("");
                 $(".input").removeClass("filled");
                 searchInTable(findTags(""));
-                $('.search category-tag').remove();
+                $('.search .category-tag').remove();
+                $(".input").attr("disabled", false);
+                $('.input').focus(); 
             }
     
             $('.info-text').removeClass("error");
