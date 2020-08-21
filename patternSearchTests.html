@@ -196,6 +196,7 @@
                 $(".input").val("");
                 $(".input").removeClass("filled");
                 searchInTable(findTags(""));
+                console.log('icon delete');
                 $('.search .category-tag').remove();
                 $(".input").attr("disabled", false);
                 $('.input').focus(); 
@@ -233,7 +234,7 @@
                 console.log('FORA')
             }*/
             if (!closestLi.hasClass('filtered')) {
-                console.log("last");
+                console.log("aaaa");
                 $('li').addClass('hidden');
                 $('li').addClass('remove');
 
