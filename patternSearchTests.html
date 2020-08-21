@@ -196,6 +196,7 @@
                 $(".input").val("");
                 $(".input").removeClass("filled");
                 searchInTable(findTags(""));
+                $('.search category-tag').remove();
             }
     
             $('.info-text').removeClass("error");
@@ -240,7 +241,7 @@
                 $(`li.${tag}`).addClass('filtered');
 
                 //$('.tag-filter').append(currentSpan.clone().append('<span></span><img src="https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Iconography/XS_D/Close.XS_D.svg"/>'));
-                //$(".input").attr("disabled", true);
+                $(".input").attr("disabled", true);
                 $(".input").addClass("filled")
                 $('.input').before(currentSpan.clone().append('<span></span><img src="https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Iconography/XS_D/Close.XS_D.svg"/>'));
 
@@ -266,6 +267,8 @@
             searchInTable(findTags(""));
 
             $('.tag-filter').html("");
+
+            currentSpan.remove();
 
             //console.log('FUNCIONA')
         })
