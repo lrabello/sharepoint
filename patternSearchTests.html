@@ -192,7 +192,7 @@
     
         $(".input + .icon").mousedown(function() {
     
-            if ($(".input").hasClass("filled")) {
+            if ($(".input").closest('div').find('span').hasClass('category-tag')) {
                 $(".input").val("");
                 $(".input").removeClass("filled");
                 searchInTable(findTags(""));
