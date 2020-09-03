@@ -191,8 +191,14 @@
         });
     
         $(".input + .icon").mousedown(function() {
+            
     
             if ($(".input").closest('div').find('span').hasClass('category-tag')) {
+                const tagArray = $(".input").closest('div').find('span').html().split('<span></span>');
+                const tag = tagArray[0].split(' ').join('').toLowerCase();
+                
+                $(`li.${tag}`).removeClass('filtered');
+
                 $(".input").val("");
                 $(".input").removeClass("filled");
                 searchInTable(findTags(""));
