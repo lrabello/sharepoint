@@ -1166,4 +1166,38 @@ div.title {
     flex: 0 0 27.333333%;
   }
 }
+  
+  /********* STABLE TAG *********/
+  /* Tooltip text */
+.stable-tag {
+    background-color: #D3E3F6;
+    padding: 5px;
+    font-size: 10px;
+}
+
+.stable-tag  .tooltip-text {
+  width: auto;
+  padding: 20px;
+  white-space: nowrap;
+  visibility: hidden;
+  background-color: #fbfcfc;
+  color: #414141;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+  margin-left: calc(100% - 60px);
+  margin-top: calc(100% - 90px);
+}
+.stable-tag  .tooltip-text {
+  margin-left: calc(100% - 40px);
+  margin-top: calc(100% - 90px);
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.stable-tag:hover .tooltip-text {
+  visibility: visible;
+}
+
 </style>
