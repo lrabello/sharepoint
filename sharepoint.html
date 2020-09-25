@@ -1179,23 +1179,21 @@ div.title {
 .stable-tag  .tooltip-text {
   width: auto;
   padding: 20px;
-  white-space: nowrap;
   visibility: hidden;
   background-color: #fbfcfc;
   color: #414141;
-  text-align: center;
+  text-align: left;
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
   /* Position the tooltip text - see examples below! */
   position: absolute;
   z-index: 1;
   margin-left: calc(100% - 60px);
   margin-top: calc(100% - 90px);
+  width: 300px;
+  bottom: 263px;
+  right: calc(100% - 320px);
 }
-.stable-tag  .tooltip-text {
-  margin-left: calc(100% - 40px);
-  margin-top: calc(100% - 90px);
-}
-
+  
 /* Show the tooltip text when you mouse over the tooltip container */
 .stable-tag:hover .tooltip-text {
   visibility: visible;
