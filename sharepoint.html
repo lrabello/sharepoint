@@ -1178,19 +1178,19 @@ div.title {
     top: -3px;
 }
 .stable-tag  .tooltip-text {
-  width: auto;
+  z-index: 1;
+  width: 300px;
   padding: 20px;
   visibility: hidden;
   background-color: #fbfcfc;
   color: #414141;
   text-align: left;
   box-shadow: 0 2px 12px rgba(65,65,65,0.12);
+   cursor: pointer;
   /* Position the tooltip text - see examples below! */
   position: absolute;
-  z-index: 1;
   margin-left: calc(100% - 60px);
   margin-top: calc(100% - 90px);
-  width: 300px;
   bottom: 36px;
   right: calc(100% - 200px);
 }
@@ -1198,7 +1198,6 @@ div.title {
 /* Show the tooltip text when you mouse over the tooltip container */
 .stable-tag:hover .tooltip-text {
   visibility: visible;
-  cursor: pointer;
 }
 
 </style>
