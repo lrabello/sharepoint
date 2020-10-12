@@ -2,18 +2,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <style>
     input {
-            padding: 0px !important;
-            padding-left: 10px !important;
-            padding-right: 32px !important;
-            max-width: 610px;
-            min-width: 150px;
-            width: 200px;
-            height: 30px;
-            margin-bottom: 5px;
-            border: 1px solid var(--color-atmo6);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+                padding: 0px !important;
+                padding-left: 10px !important;
+                padding-right: 32px !important;
+                max-width: 610px;
+                min-width: 150px;
+                width: 200px;
+                height: 30px;
+                margin-bottom: 5px;
+                border: 1px solid var(--color-atmo6);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
             
             .search {
@@ -126,7 +126,7 @@
 <body>
     <div class="search">
         <div class="label"> </div>
-        <input class="input guideInput" type="text" placeholder="Search..." name="fname">
+        <input class="input guideInput" type="text" placeholder="Search" name="fname">
         <span id="icon" class="icon"></span>
         <div class="info-text"></div>
         <div class="error-message">This pattern has changed to
@@ -185,7 +185,7 @@
     $(".guideInput").keydown(function(e) {
         if (e.keyCode == 13) // enter key
         {
-            $('.guideInput input').blur();
+            $('.guideInput').blur();
             return false;
         }
     });
@@ -215,7 +215,7 @@
 
     });
 
-    $(".guideInput input").on("input", function() {
+    $(".guideInput").on("input", function() {
         searchInTable(findTags(fixValue($('input.guideInput').val())));
     });
 
