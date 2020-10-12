@@ -127,8 +127,8 @@ input {
 <body>
     <div class="search">
         <div class="label"> </div>
-        <input class="input" type="text" placeholder="Search..." name="fname">
-        <span class="icon"></span>
+        <input class="input patternInput" type="text" placeholder="Search..." name="fname">
+        <span class="icon" id="patternIcon"></span>
         <div class="info-text"></div>
         <div class="error-message">This pattern has changed to
             <a href="#"> </a></div>
@@ -139,8 +139,7 @@ input {
 </html>
 <script>
   //var patternOptions = ["stable", "specs", "file", "uploader", "about", "help", "screen", "selection", "radiobutton", "toggle", "checkbox", "badges", "timepicker", "range", "cardsview", "login", "listview", "assetinventory", "multibuttons", "segmentedcontrol", "inline", "editing", "map", "marker", "bulkactions", "textcapitalization", "wizard", "stepper", "loading", "component", "tooltip", "slider", "control", "searchbox", "date", "range", "controls", "legends", "lists", "cards", "images", "views", "filterspanel", "visualizations", "globalactions", "horizontaltabs", "scroll", "dateformat", "buttons", "emptystates", "notifications", "modals", "banner", "snackbar", "alerts", "error", "form", "pagination", "horizontal", "verticalnavigation", "horizontalnavigation", "dropdown", "header", "input", "textarea", "breadcrumb", "installer", "item", "another", "cookies", "consent", "gdpr", "modal", "overlay", "splash", "toggle", "scroll", "selection", "vertical", "horizontal", "navigation", "menu", "app", "switcher", "list", "view", "accordion", "action", "bar", "drag", "drop", "filter", "group", "panel", "scheduler", "statustracker", "tracker", "tags", "upward", "navigation", "back", "secondary", "user", "preferences", "facet", "extended", "footer", "preferences", "full", "name", "richtext", "editor", "shortcuts", "toolbar", "visual", "flow", "designer", "zoom", "new", "addnewitem", "another", "launcher", "details", "section", "feeder", "logs", "tool", "tree", "page", "titles", "panels", "dialog", "codeeditor", "commentsection"];                       
-  var patternOptions = ["stable", "specs", "file", "uploader", "aboutscreen", "accordion", "help", "screen", "selection", "radiobutton", "toggle", "checkbox", "badges", "timepicker", "range", "cardsview", "login", "listview", "assetinventory", "multibuttons", "segmentedcontrol", "inline", "editing", "map", "marker", "bulkactions", "textcapitalization", "wizard", "stepper", "loading", "component", "tooltip", "slider", "controls", "searchbox", "date", "legends", "lists", "cards", "images", "views", "filterspanel", "visualizations", "globalactions", "horizontaltabs", "scroll", "dateformat", "buttons", "emptystates", "notifications", "modals", "banner", "snackbar", "alerts", "error", "form", "pagination", "horizontal", "verticalnavigation", "horizontalnavigation", "dropdown", "header", "input", "textarea", "breadcrumb", "installer", "item", "another", "cookies", "consent", "gdpr", "modal", "overlay", "splash", "vertical", "navigation"]; 
-
+  var patternOptions = ["stable", "specs", "file", "uploader", "about", "help", "screen", "selection", "radiobutton", "toggle", "checkbox", "badges", "timepicker", "range", "cardsview", "login", "listview", "assetinventory", "multibuttons", "segmentedcontrol", "inline", "editing", "map", "marker", "bulkactions", "textcapitalization", "wizard", "stepper", "loading", "component", "tooltip", "slider", "control", "searchbox", "date", "range", "controls", "legends", "lists", "cards", "images", "views", "filterspanel", "visualizations", "globalactions", "horizontaltabs", "scroll", "dateformat", "buttons", "emptystates", "notifications", "modals", "banner", "snackbar", "alerts", "error", "form", "pagination", "horizontal", "verticalnavigation", "horizontalnavigation", "dropdown", "header", "input", "textarea", "breadcrumb", "installer", "item", "another", "cookies", "consent", "gdpr", "modal", "overlay", "splash", "toggle", "scroll", "selection", "vertical", "horizontal", "navigation", "menu", "app", "switcher", "list", "view", "accordion", "action", "bar", "drag", "drop", "filter", "group", "panel", "scheduler", "statustracker", "tracker", "tags", "upward", "navigation", "back", "secondary", "user", "preferences", "facet", "extended", "footer", "preferences", "full", "name", "richtext", "editor", "shortcuts", "toolbar", "visual", "flow", "designer", "zoom", "new", "addnewitem", "another", "launcher", "details", "section", "feeder", "logs", "tool", "tree", "page", "titles", "panels", "dialog", "codeeditor", "commentsection"];                       
 
     var changed = ["table", "kpis"];
     var changedMap = {
@@ -167,16 +166,16 @@ input {
         if (searchParams.has('search')) {
             searchInTable(findTags(fixValue(searchParams.get('search'))));
             //content = $('td.' + fixValue(searchParams.get('search'))+' .title').html();
-            $(".input").val(searchParams.get('search'));
+            $(".patternInput").val(searchParams.get('search'));
         }
 
     });
 
-    $(".input + .icon").mousedown(function() {
+    $(".patternInput + #patternIcon").mousedown(function() {
 
-        if ($(".input").hasClass("filled")) {
-            $(".input").val("");
-            $(".input").removeClass("filled");
+        if ($(".patternInput").hasClass("filled")) {
+            $(".patternInput").val("");
+            $(".patternInput").removeClass("filled");
             searchInTable(findTags(""));
         }
 
@@ -186,47 +185,47 @@ input {
 
 
 
-    $(".input").keydown(function(e) {
+    $(".patternInput").keydown(function(e) {
         if (e.keyCode == 13) // enter key
         {
-            $('input').blur();
+            $('.patternInput').blur();
             return false;
         }
     });
 
-    $(".input").keyup(function() {
+    $(".patternInput").keyup(function() {
 
-        $(".input").removeClass("filled");
+        $(".patternInput").removeClass("filled");
 
-        if ($(".input").val().length > 0) {
-            $(".input").addClass("filled");
+        if ($(".patternInput").val().length > 0) {
+            $(".patternInput").addClass("filled");
 
         }
 
     });
 
-    $(".input").focusout(function() {
+    $(".patternInput").focusout(function() {
 
-        $(".input").removeClass("filled");
+        $(".patternInput").removeClass("filled");
 
     });
 
-    $(".input").focusin(function() {
+    $(".patternInput").focusin(function() {
 
-        if ($(".input").val().length > 0) {
-            $(".input").addClass("filled");
+        if ($(".patternInput").val().length > 0) {
+            $(".patternInput").addClass("filled");
         }
 
     });
 
-    $("input").on("input", function() {
-        searchInTable(findTags(fixValue($('input.input').val())));
+    $(".patternInput").on("input", function() {
+        searchInTable(findTags(fixValue($('input.patternInput').val())));
     });
 
 
     $('.button').click(function() {
-        if (jQuery.inArray($('input.input').val(), patternOptions) != -1) {
-            searchInTable($('input.input').val());
+        if (jQuery.inArray($('input.patternInput').val(), patternOptions) != -1) {
+            searchInTable($('input.patternInput').val());
         }
     });
 
