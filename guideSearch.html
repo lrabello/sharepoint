@@ -16,15 +16,15 @@
                 text-overflow: ellipsis;
             }
             
-            .search {
+            .guideSearch {
                 margin-top: 40px;
             }
-            .search input:hover {
+            .guideSearch input:hover {
                 border-color: var(--color-atmo7) !important;
                 cursor: text;
             }
             
-            .search input:focus {
+            .guideSearch input:focus {
                 outline: none;
                 border-color: var(--color-atmo7) !important;
             }
@@ -109,7 +109,6 @@
           ul.patternCards li {
             list-style: none;
             flex: 0 0 27.333333%!important;
-            /*border: 1px solid #444444;*/
           }
     
           .ms-rte-layoutszone-inner {
@@ -125,9 +124,9 @@
         </style>
     </head>
 <body>
-    <div class="search">
+    <div class="guideSearch">
         <div class="label"> </div>
-        <input class="guideInput" type="text" placeholder="Search" name="fname">
+        <input class="guideInput" type="text" placeholder="Search..." name="fname">
         <span id="icon" class="icon"></span>
         <div class="info-text"></div>
         <div class="error-message">This pattern has changed to
@@ -139,10 +138,10 @@
 </html>
 <script>
     
-    var options = ["actionsbasedonpermissions", "based", "permissions", "appiconbrief", "icon", "brief", "blueprint", "breadcrumbsvsupwardnavigation", "upward", "navigation", "buildingalayout", "layout", "capitalization", "compliancetiers", "tiers", "certification", "createasvgfilefordevelopment", "svg", "file", "development", "commitmessages", "messages", "crossappnavigation", "app", "navigation", "dateformat", "format", "designingforlargescreendevices", "designingnativemobileapps", "native", "mobile", "apps","large", "screen", "devices", "dialogcopy", "copy", "dialogvsnotifications","notifications", "dynamiccontentonscroll", "content", "scroll", "editcontent", "content", "expandandcollapseverticalnavigation", "collapse", "vertical", "navigation", "focus", "glossary", "guicomponentscomplexitycategorization", "components", "complexity", "categorization", "howtobuildadspattern", "build", "pattern", "howtobuildicons", "icons", "informationarchitecture", "architecture", "iosdsstyling", "styling", "mobiletypography", "typography", "navigationsystem", "navigationsystemvsscroll", "system", "scroll", "numberformat", "format", "onboarding", "release", "template", "uikitcertification", "certification", "uikitreview", "review", "userinterviews", "interviews", "wrappingandtruncatingtext", "truncating", "text"];
+    var guideOptions = ["actionsbasedonpermissions", "based", "permissions", "appiconbrief", "icon", "brief", "blueprint", "breadcrumbsvsupwardnavigation", "upward", "navigation", "buildingalayout", "layout", "capitalization", "compliancetiers", "tiers", "certification", "createasvgfilefordevelopment", "svg", "file", "development", "commitmessages", "messages", "crossappnavigation", "app", "navigation", "dateformat", "format", "designingforlargescreendevices", "designingnativemobileapps", "native", "mobile", "apps","large", "screen", "devices", "dialogcopy", "copy", "dialogvsnotifications","notifications", "dynamiccontentonscroll", "content", "scroll", "editcontent", "content", "expandandcollapseverticalnavigation", "collapse", "vertical", "navigation", "focus", "glossary", "guicomponentscomplexitycategorization", "components", "complexity", "categorization", "howtobuildadspattern", "build", "pattern", "howtobuildicons", "icons", "informationarchitecture", "architecture", "iosdsstyling", "styling", "mobiletypography", "typography", "navigationsystem", "navigationsystemvsscroll", "system", "scroll", "numberformat", "format", "onboarding", "release", "template", "uikitcertification", "certification", "uikitreview", "review", "userinterviews", "interviews", "wrappingandtruncatingtext", "truncating", "text"];
     
-    var changed = ["table", "kpis"];
-    var changedMap = {
+    var guideChanged = ["table", "kpis"];
+    var guideChangedMap = {
         "table": {
             url: "https://hitachivantara.sharepoint.com/sites/DesignSystem/Visualization%20Library/Home.aspx",
             content: "Visualization Library"
@@ -157,16 +156,16 @@
         
     $(document).ready(function() {
 
-        $("li.search").remove();
+        $("li.guideSearch").remove();
         $('.remove').removeClass('remove');
         $('.hidden').removeClass('hidden');
         var remove = false;
 
-        let searchParams = new URLSearchParams(window.location.search);
-        if (searchParams.has('search')) {
-            searchInTable(findTags(fixValue(searchParams.get('search'))));
-            //content = $('td.' + fixValue(searchParams.get('search'))+' .title').html();
-            $(".guideInput").val(searchParams.get('search'));
+        let guideSearchParams = new URLSearchParams(window.location.search);
+        if (guideSearchParams.has('search')) {
+            searchInTable(findTags(fixValue(guideSearchParams.get('search'))));
+            //content = $('td.' + fixValue(guideSearchParams.get('search'))+' .title').html();
+            $(".guideInput").val(guideSearchParams.get('search'));
         }
 
     });
@@ -224,7 +223,7 @@
 
 
     $('.button').click(function() {
-        if (jQuery.inArray($('input.guideInput').val(), options) != -1) {
+        if (jQuery.inArray($('input.guideInput').val(), guideOptions) != -1) {
             searchInTable($('input.guideInput').val());
         }
     });
@@ -238,20 +237,20 @@
 
         var aux = 0;
         var terms = [];
-        for (i = 0; i < options.length; i++) {
-            if (options[i].indexOf(term) != -1) {
-                terms[aux] = options[i];
+        for (i = 0; i < guideOptions.length; i++) {
+            if (guideOptions[i].indexOf(term) != -1) {
+                terms[aux] = guideOptions[i];
                 aux++;
             }
 
         }
 
         remove = false;
-        for (i = 0; i < changed.length; i++) {
-            if (changed[i].indexOf(term) != -1) {
+        for (i = 0; i < guideChanged.length; i++) {
+            if (guideChanged[i].indexOf(term) != -1) {
                 var errorMessage = $('div.error-message a');
 
-                var termInfo = changedMap[changed[i]];
+                var termInfo = guideChangedMap[guideChanged[i]];
                 errorMessage.attr('href', termInfo.url);
                 errorMessage.html(termInfo.content);
 
@@ -264,7 +263,7 @@
 
     function searchInTable(terms, term) {
         $('li').addClass('hidden');
-        $("li.search").remove();
+        $("li.guideSearch").remove();
         $(".remove").removeClass('remove');
 
         $('.info-text').removeClass("error-removed");
