@@ -793,7 +793,8 @@ input::placeholder {
   font-weight: 400 !important;
 }
 
-.input .label {
+.patternInput .label, 
+.guideInput .label  {
   font-size: var(--font-size-info) !important;
   font-weight: 600 !important;
   color: var(--color-atmo7);
@@ -828,7 +829,7 @@ input + .icon.filled:hover {
   cursor: pointer;
 }
 
-.input:placeholder {
+.patternInput:placeholder, .guideInput:placeholder {
   color: var(--color-atmo7);
 }
 
@@ -1146,7 +1147,7 @@ div.title {
 
 @media only screen and (max-width: 1800px) {
   ul.patternCards li {
-    flex: 0 0 27.333333%!important;
+    flex: 0 0 27.333333%;
   }
 }
 @media only screen and (max-width: 1394px) {
@@ -1159,7 +1160,7 @@ div.title {
   }
 
   ul.patternCards li {
-    flex: 0 0 27.333333%!important;
+    flex: 0 0 27.333333%;
   }
 }
   
