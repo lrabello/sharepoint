@@ -304,7 +304,7 @@ input {
         $('.info-text').removeClass("error-removed");
         $('.info-text').removeClass("error");
 
-        if (terms.length === 0 && isUiKit) {
+        if (terms.length === patternOptions.length && isUiKit) {
             $(`li.uikit`).removeClass('hidden');
         } else {
             for (i = 0; i < terms.length; i++) {
