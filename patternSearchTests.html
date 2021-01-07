@@ -193,7 +193,7 @@ input {
 
         let searchParams = new URLSearchParams(window.location.search);
         if (searchParams.has('search')) {
-            searchInTableUiKit(findTags(fixValue(searchParams.get('search'))), $("#uikit-filter").is('checked'));
+            searchInTableUiKit(findTags(fixValue(searchParams.get('search'))), $("#uikit-filter").is(':checked'));
             //content = $('td.' + fixValue(searchParams.get('search'))+' .title').html();
             $(".patternInput").val(searchParams.get('search'));
         }
@@ -203,7 +203,7 @@ input {
             if ($(".patternInput").hasClass("filled")) {
                 $(".patternInput").val("");
                 $(".patternInput").removeClass("filled");
-                searchInTableUiKit(findTags(""), $("#uikit-filter").is('checked'));
+                searchInTableUiKit(findTags(""), $("#uikit-filter").is(':checked'));
             }
 
             $('.info-text').removeClass("error");
@@ -246,7 +246,7 @@ input {
         });
 
         $(".patternInput").on("input", function() {
-            searchInTableUiKit(findTags(fixValue($('input.patternInput').val())), $("#uikit-filter").is('checked'));
+            searchInTableUiKit(findTags(fixValue($('input.patternInput').val())), $("#uikit-filter").is(':checked'));
         });
 
         $("#uikit-filter").on("change", function() {
@@ -255,7 +255,7 @@ input {
 
         $('.button').click(function() {
             if (jQuery.inArray($('input.patternInput').val(), patternOptions) != -1) {
-                searchInTableUiKit($('input.patternInput').val(), $("#uikit-filter").is('checked'));
+                searchInTableUiKit($('input.patternInput').val(), $("#uikit-filter").is(':checked'));
             }
         });
 
