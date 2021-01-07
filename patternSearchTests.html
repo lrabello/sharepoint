@@ -250,7 +250,7 @@ input {
         });
 
         $("#uikit-filter").on("change", function() {
-            searchInTable(findTags(fixValue($('input.patternInput').val())), $("#uikit-filter").is('checked'));
+            searchInTable(findTags(fixValue($('input.patternInput').val())), this.checked);
         });
 
 
