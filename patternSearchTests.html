@@ -202,7 +202,7 @@ input {
             if ($(".patternInput").hasClass("filled")) {
                 $(".patternInput").val("");
                 $(".patternInput").removeClass("filled");
-                searchInTableUiKit(findTags(""), $("#uikit-filter").is(':checked'));
+                searchInTableUiKit(findTagsUiKit(""), $("#uikit-filter").is(':checked'));
             }
 
             $('.info-text').removeClass("error");
@@ -243,11 +243,11 @@ input {
         });
 
         $(".patternInput").on("input", function() {
-            searchInTableUiKit(findTags(fixValue($('input.patternInput').val())), $("#uikit-filter").is(':checked'));
+            searchInTableUiKit(findTagsUiKit(fixValueUiKit($('input.patternInput').val())), $("#uikit-filter").is(':checked'));
         });
 
         $("#uikit-filter").on("change", function() {
-            searchInTableUiKit(findTags(fixValue($('input.patternInput').val())), this.checked);
+            searchInTableUiKit(findTagsUiKit(fixValueUiKit($('input.patternInput').val())), this.checked);
         });
 
         $('.button').click(function() {
@@ -258,11 +258,11 @@ input {
 
     });
 
-    function fixValue(value) {
+    function fixValueUiKit(value) {
         return value.toLowerCase().replace(/\s/g, '');
     }
 
-    function findTags(term) {
+    function findTagsUiKit(term) {
         console.log(term);
 
         var aux = 0;
