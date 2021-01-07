@@ -34,7 +34,7 @@ input {
             font-weight: 400 !important;
         }
         
-        .patternInput .label  {
+        .patternInputUiKit .label  {
             font-size: var(--font-size-info) !important;
             font-weight: 600 !important;
             color: var(--color-atmo7);
@@ -92,7 +92,7 @@ input {
             color: var(--color-atmo6);
         }
         
-        .patternInput:placeholder {
+        .patternInputUiKit:placeholder {
             color: var(--color-atmo6);
         }
         
@@ -152,7 +152,7 @@ input {
 <body>
     <div class="search">
         <div class="label"> </div>
-        <input class="patternInput" type="text" placeholder="Search..." name="fname">
+        <input class="patternInputUiKit" type="text" placeholder="Search..." name="fname">
         <span class="icon" id="patternIcon"></span>
         <div class="info-text"></div>
         <div class="error-message">This pattern has changed to
@@ -194,14 +194,14 @@ input {
         if (searchParams.has('search')) {
             searchInTableUiKit(findTags(fixValue(searchParams.get('search'))), $("#uikit-filter").is(':checked'));
             //content = $('td.' + fixValue(searchParams.get('search'))+' .title').html();
-            $(".patternInput").val(searchParams.get('search'));
+            $(".patternInputUiKit").val(searchParams.get('search'));
         }
 
-        $(".patternInput + #patternIcon").mousedown(function() {
+        $(".patternInputUiKit + #patternIcon").mousedown(function() {
 
-            if ($(".patternInput").hasClass("filled")) {
-                $(".patternInput").val("");
-                $(".patternInput").removeClass("filled");
+            if ($(".patternInputUiKit").hasClass("filled")) {
+                $(".patternInputUiKit").val("");
+                $(".patternInputUiKit").removeClass("filled");
                 searchInTableUiKit(findTagsUiKit(""), $("#uikit-filter").is(':checked'));
             }
 
@@ -209,50 +209,50 @@ input {
 
         });
 
-        $(".patternInput").keydown(function(e) {
+        $(".patternInputUiKit").keydown(function(e) {
             if (e.keyCode == 13) // enter key
             {
-                $('.patternInput').blur();
+                $('.patternInputUiKit').blur();
                 return false;
             }
         });
 
-        $(".patternInput").keyup(function() {
+        $(".patternInputUiKit").keyup(function() {
 
-            $(".patternInput").removeClass("filled");
+            $(".patternInputUiKit").removeClass("filled");
 
-            if ($(".patternInput").val().length > 0) {
-                $(".patternInput").addClass("filled");
+            if ($(".patternInputUiKit").val().length > 0) {
+                $(".patternInputUiKit").addClass("filled");
 
             }
 
         });
 
-        $(".patternInput").focusout(function() {
+        $(".patternInputUiKit").focusout(function() {
 
-            $(".patternInput").removeClass("filled");
+            $(".patternInputUiKit").removeClass("filled");
 
         });
 
-        $(".patternInput").focusin(function() {
+        $(".patternInputUiKit").focusin(function() {
 
-            if ($(".patternInput").val().length > 0) {
-                $(".patternInput").addClass("filled");
+            if ($(".patternInputUiKit").val().length > 0) {
+                $(".patternInputUiKit").addClass("filled");
             }
 
         });
 
-        $(".patternInput").on("input", function() {
-            searchInTableUiKit(findTagsUiKit(fixValueUiKit($('input.patternInput').val())), $("#uikit-filter").is(':checked'));
+        $(".patternInputUiKit").on("input", function() {
+            searchInTableUiKit(findTagsUiKit(fixValueUiKit($('input.patternInputUiKit').val())), $("#uikit-filter").is(':checked'));
         });
 
         $("#uikit-filter").on("change", function() {
-            searchInTableUiKit(findTagsUiKit(fixValueUiKit($('input.patternInput').val())), this.checked);
+            searchInTableUiKit(findTagsUiKit(fixValueUiKit($('input.patternInputUiKit').val())), this.checked);
         });
 
         $('.button').click(function() {
-            if (jQuery.inArray($('input.patternInput').val(), patternOptions) != -1) {
-                searchInTableUiKit($('input.patternInput').val(), $("#uikit-filter").is(':checked'));
+            if (jQuery.inArray($('input.patternInputUiKit').val(), patternOptions) != -1) {
+                searchInTableUiKit($('input.patternInputUiKit').val(), $("#uikit-filter").is(':checked'));
             }
         });
 
