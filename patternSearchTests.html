@@ -121,6 +121,31 @@ input {
         border-bottom: 1px solid #CCCED0;
         border-radius: 2px;
      }
+        
+          /*  UIKIT CHECKBOX */
+     .filter-selection {
+        position: absolute;
+        width: 300px;
+        left: 183px;
+        top: 0px;
+     }
+     .filter-selection input[type=checkbox]  {
+        position: absolute;
+        width: 17px;
+        height: 17px;
+        top: 5px;
+        left: 22px;
+        border-radius: 0!important;
+     }
+     .filter-selection input[type=checkbox]:checked  {
+        background-color: #414141!important;
+     }
+     .filter-selection label  {
+        position: absolute;
+        font-size: 12px;
+        left: 117px;
+        top: 9px;
+    }   
     </style>
 </head>
 
@@ -131,7 +156,12 @@ input {
         <span class="icon" id="patternIcon"></span>
         <div class="info-text"></div>
         <div class="error-message">This pattern has changed to
-            <a href="#"> </a></div>
+            <a href="#"> </a>
+        </div>
+        <div class="filter-selection">
+            <input type="checkbox" id="uikit-filter" name="uikit-filter" value="true">
+            <label for="uikit-filter"> Available in UI Kit</label><br>
+        </div>
     </div>
 
 </body>
