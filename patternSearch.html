@@ -34,7 +34,7 @@ input {
             font-weight: 400 !important;
         }
         
-        .patternInput .label  {
+        .patternInputUiKit .label  {
             font-size: var(--font-size-info) !important;
             font-weight: 600 !important;
             color: var(--color-atmo7);
@@ -49,12 +49,12 @@ input {
             width: 32px;
             height: 32px;
             margin-left: -32px;
-            background: url("https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Images/input_icons.svg") no-repeat -32px 0px;
+            background: url("https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Images/input_icons.svg") no-repeat -32px 0px!important;
             background-size: cover;
         }
         
         input.filled+.icon {
-            background: url("https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Images/input_icons.svg") no-repeat 0px 0px;
+            background: url("https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Images/input_icons.svg") no-repeat 0px 0px!important;
             background-size: cover;
         }
         
@@ -92,7 +92,7 @@ input {
             color: var(--color-atmo6);
         }
         
-        .patternInput:placeholder {
+        .patternInputUiKit:placeholder {
             color: var(--color-atmo6);
         }
         
@@ -121,25 +121,72 @@ input {
         border-bottom: 1px solid #CCCED0;
         border-radius: 2px;
      }
+        
+       /*  UIKIT CHECKBOX */
+     .filter-selection {
+        position: absolute;
+        width: 140px!important;
+        height: 32px;
+        left: 485px!important;
+        top: 191px!important;
+     }
+     .filter-selection:hover {
+        background-color: #e8e8e8;
+     }
+     .filter-selection input[type=checkbox]  {
+        position: absolute;
+        width: 17px;
+        height: 17px;
+        min-width: 17px!important;
+        min-height: 17px!important; 
+        top: 8px!important;
+        left: 8px!important;
+        border-radius: 0!important;
+        padding-right: 0!important;
+        padding-left:0!important;
+        margin:0!important;
+        background-color: #fbfcfc;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+     }
+    .filter-selection input[type=checkbox]:before  {
+        border-radius:0!important;
+        border: 1px solid #414141;
+    }
+     .filter-selection input[type=checkbox]:checked  {
+        background-image: url('https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Images/CheckboxCheck.S_D.svg')!important;
+        background-position: center;
+     }
+     .filter-selection label  {
+        position: absolute;
+        font-size: 12px;
+        left: 33px!important;
+        top: 9px;
+    }   
     </style>
 </head>
 
 <body>
     <div class="search">
         <div class="label"> </div>
-        <input class="patternInput" type="text" placeholder="Search..." name="fname">
+        <input class="patternInputUiKit" type="text" placeholder="Search..." name="fname">
         <span class="icon" id="patternIcon"></span>
         <div class="info-text"></div>
         <div class="error-message">This pattern has changed to
-            <a href="#"> </a></div>
+            <a href="#"> </a>
+        </div>
+        <div class="filter-selection">
+            <input type="checkbox" id="uikit-filter" name="uikit-filter" value="true">
+            <label for="uikit-filter"> Available in UI Kit</label><br>
+        </div>
     </div>
 
 </body>
 
 </html>
 <script>
-   // ADD THE NEW TERMS IN THE guideSearch.html. Sharepoint is not recognizing this js. 
-  var patternOptions = ["stable", "specs", "file", "uploader", "about", "help", "screen", "selection", "radiobutton", "toggle", "checkbox", "badges", "timepicker", "range", "cardsview", "login", "listview", "assetinventory", "multibuttons", "segmentedcontrol", "inline", "editing", "map", "marker", "bulkactions", "textcapitalization", "wizard", "stepper", "loading", "component", "tooltip", "slider", "control", "searchbox", "date", "range", "controls", "legends", "lists", "cards", "images", "views", "filterspanel", "visualizations", "globalactions", "horizontaltabs", "scroll", "dateformat", "buttons", "emptystates", "notifications", "modals", "banner", "snackbar", "alerts", "error", "form", "pagination", "horizontal", "verticalnavigation", "horizontalnavigation", "dropdown", "header", "input", "textarea", "breadcrumb", "installer", "item", "another", "cookies", "consent", "gdpr", "modal", "overlay", "splash", "toggle", "scroll", "selection", "vertical", "horizontal", "navigation", "menu", "app", "switcher", "list", "view", "accordion", "action", "bar", "drag", "drop", "filter", "group", "panel", "scheduler", "statustracker", "tracker", "tags", "upward", "navigation", "back", "secondary", "user", "preferences", "facet", "extended", "footer", "preferences", "full", "name", "richtext", "editor", "shortcuts", "toolbar", "visual", "flow", "designer", "zoom", "new", "addnewitem", "another", "launcher", "details", "section", "feeder", "logs", "tool", "tree", "page", "titles", "panels", "dialog", "codeeditor", "commentsection", "imagecarousel", "carousel", "skiplinks", "keyboard", "focus", "aboutscreen", "uikit"];                       
+    // ADD THE NEW TERMS IN THE guideSearch.html. Sharepoint is not recognizing this js. 
+    var patternOptions = ["stable", "specs", "file", "uploader", "help", "screen", "selection", "radiobutton", "toggle", "checkbox", "badges", "timepicker", "range", "cardsview", "login", "listview", "assetinventory", "multibuttons", "segmentedcontrol", "inline", "editing", "map", "marker", "bulkactions", "textcapitalization", "wizard", "stepper", "loading", "component", "tooltip", "slider", "control", "searchbox", "date", "range", "controls", "legends", "lists", "cards", "images", "views", "filterspanel", "visualizations", "globalactions", "horizontaltabs", "scroll", "dateformat", "buttons", "emptystates", "notifications", "modals", "banner", "snackbar", "alerts", "error", "form", "pagination", "horizontal", "verticalnavigation", "horizontalnavigation", "dropdown", "header", "input", "textarea", "breadcrumb", "installer", "item", "another", "cookies", "consent", "gdpr", "modal", "overlay", "splash", "toggle", "scroll", "selection", "vertical", "horizontal", "navigation", "menu", "app", "switcher", "list", "view", "accordion", "action", "bar", "drag", "drop", "filter", "group", "panel", "scheduler", "statustracker", "tracker", "tags", "upward", "navigation", "back", "secondary", "user", "preferences", "facet", "extended", "footer", "preferences", "full", "name", "richtext", "editor", "shortcuts", "toolbar", "visual", "flow", "designer", "zoom", "new", "addnewitem", "another", "launcher", "details", "section", "feeder", "logs", "tool", "tree", "page", "titles", "panels", "dialog", "codeeditor", "commentsection", "imagecarousel", "carousel", "skiplinks", "keyboard", "focus", "aboutscreen", "uikit"];                       
 
     var changed = ["table", "kpis"];
     var changedMap = {
@@ -152,8 +199,6 @@ input {
             content: "Visualization Library"
         }
     };
-
-        
         
     $(document).ready(function() {
 
@@ -164,77 +209,77 @@ input {
 
         let searchParams = new URLSearchParams(window.location.search);
         if (searchParams.has('search')) {
-            searchInTable(findTags(fixValue(searchParams.get('search'))));
+            searchInTableUiKit(findTags(fixValue(searchParams.get('search'))), $("#uikit-filter").is(':checked'));
             //content = $('td.' + fixValue(searchParams.get('search'))+' .title').html();
-            $(".patternInput").val(searchParams.get('search'));
+            $(".patternInputUiKit").val(searchParams.get('search'));
         }
 
-        $(".patternInput + #patternIcon").mousedown(function() {
+        $(".patternInputUiKit + #patternIcon").mousedown(function() {
 
-            if ($(".patternInput").hasClass("filled")) {
-                $(".patternInput").val("");
-                $(".patternInput").removeClass("filled");
-                searchInTable(findTags(""));
+            if ($(".patternInputUiKit").hasClass("filled")) {
+                $(".patternInputUiKit").val("");
+                $(".patternInputUiKit").removeClass("filled");
+                searchInTableUiKit(findTagsUiKit(""), $("#uikit-filter").is(':checked'));
             }
 
             $('.info-text').removeClass("error");
 
         });
 
-
-
-        $(".patternInput").keydown(function(e) {
+        $(".patternInputUiKit").keydown(function(e) {
             if (e.keyCode == 13) // enter key
             {
-                $('.patternInput').blur();
+                $('.patternInputUiKit').blur();
                 return false;
             }
         });
 
-        $(".patternInput").keyup(function() {
+        $(".patternInputUiKit").keyup(function() {
 
-            $(".patternInput").removeClass("filled");
+            $(".patternInputUiKit").removeClass("filled");
 
-            if ($(".patternInput").val().length > 0) {
-                $(".patternInput").addClass("filled");
+            if ($(".patternInputUiKit").val().length > 0) {
+                $(".patternInputUiKit").addClass("filled");
 
             }
 
         });
 
-        $(".patternInput").focusout(function() {
+        $(".patternInputUiKit").focusout(function() {
 
-            $(".patternInput").removeClass("filled");
+            $(".patternInputUiKit").removeClass("filled");
 
         });
 
-        $(".patternInput").focusin(function() {
+        $(".patternInputUiKit").focusin(function() {
 
-            if ($(".patternInput").val().length > 0) {
-                $(".patternInput").addClass("filled");
+            if ($(".patternInputUiKit").val().length > 0) {
+                $(".patternInputUiKit").addClass("filled");
             }
 
         });
 
-        $(".patternInput").on("input", function() {
-            searchInTable(findTags(fixValue($('input.patternInput').val())));
+        $(".patternInputUiKit").on("input", function() {
+            searchInTableUiKit(findTagsUiKit(fixValueUiKit($('input.patternInputUiKit').val())), $("#uikit-filter").is(':checked'));
         });
 
+        $("#uikit-filter").on("change", function() {
+            searchInTableUiKit(findTagsUiKit(fixValueUiKit($('input.patternInputUiKit').val())), this.checked);
+        });
 
         $('.button').click(function() {
-            if (jQuery.inArray($('input.patternInput').val(), patternOptions) != -1) {
-                searchInTable($('input.patternInput').val());
+            if (jQuery.inArray($('input.patternInputUiKit').val(), patternOptions) != -1) {
+                searchInTableUiKit($('input.patternInputUiKit').val(), $("#uikit-filter").is(':checked'));
             }
         });
 
     });
 
-
-    function fixValue(value) {
+    function fixValueUiKit(value) {
         return value.toLowerCase().replace(/\s/g, '');
     }
 
-    function findTags(term) {
+    function findTagsUiKit(term) {
         console.log(term);
 
         var aux = 0;
@@ -244,7 +289,6 @@ input {
                 terms[aux] = patternOptions[i];
                 aux++;
             }
-
         }
 
         remove = false;
@@ -263,7 +307,7 @@ input {
         return terms;
     }
 
-    function searchInTable(terms, term) {
+    function searchInTableUiKit(terms, isUiKit) {
         $('li').addClass('hidden');
         $("li.search").remove();
         $(".remove").removeClass('remove');
@@ -271,11 +315,17 @@ input {
         $('.info-text').removeClass("error-removed");
         $('.info-text').removeClass("error");
 
-        for (i = 0; i < terms.length; i++) {
-            $('li.' + terms[i]).removeClass('hidden');
+        if (terms.length === patternOptions.length && isUiKit) {
+            $(`li.uikit`).removeClass('hidden');
+        } else {
+            for (i = 0; i < terms.length; i++) {
+                if (isUiKit) {
+                    $(`li.uikit${'.'+ terms[i]}`).removeClass('hidden');
+                } else {
+                    $(`li.${terms[i]}`).removeClass('hidden');
+                }
+            }
         }
-
-
 
         if ($('li:not(".hidden")').length == 0) {
             console.log(remove);
