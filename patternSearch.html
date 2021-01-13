@@ -43,7 +43,7 @@ input {
             margin-bottom: var(--s-space);
             padding: 0px;
         }
-        
+        /*
         input+.icon {
             position: absolute;
             width: 32px;
@@ -57,7 +57,23 @@ input {
             background: url('https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Images/input_icons.svg') no-repeat 0px 0px!important;
             background-size: cover;
         }
+            */
+        input+#patternIcon {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            margin-left: -32px;
+            background: url('https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Images/input_icons.svg') no-repeat -32px 0px!important;
+            background-size: cover;
+        }
         
+        input.filled+#patternIcon  {
+            background: url('https://hitachivantara.sharepoint.com/sites/DesignSystem/SiteAssets/Images/input_icons.svg') no-repeat 0px 0px!important;
+            background-size: cover;
+        }
+        
+    
+      
         input.filled+.icon:hover {
             cursor: pointer;
         }
