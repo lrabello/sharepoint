@@ -1,0 +1,35 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+<script>
+
+$( document ).ready(function() {
+
+    let tooltipTimeout;
+
+    function showTooltip(title, e) {
+        $('<p class="stableTooltip"></p>').fadeIn(100).text(title).appendTo('body');
+        $('.stableTooltip').css({
+            top: e.pageY,
+            left: e.pageX
+        })
+    }
+  
+    $('.tooltipLink').hover(function (e) {
+        var title = $(this).attr('data-tooltip');
+        $(this).data('tipText', title);
+        tooltipTimeout = setTimeout(() => showTooltip(title, e), 2000);
+    }, function () {
+        clearTimeout(tooltipTimeout);
+        $(this).attr('data-tooltip', $(this).data('tipText'));
+        $('.stableTooltip').fadeOut(100).remove();
+    }).mousemove(function (e) {
+        $('.stableTooltip').css({
+            top: e.pageY,
+            left: e.pageX
+        })
+    });
+
+
+
+
+});
+</script> 
