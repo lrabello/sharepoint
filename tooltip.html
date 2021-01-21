@@ -16,7 +16,7 @@ $( document ).ready(function() {
     $('.tooltipLink').hover(function (e) {
         var title = $(this).attr('data-tooltip');
         $(this).data('tipText', title);
-        tooltipTimeout = setTimeout(() => showTooltip(title, e), 2000);
+        tooltipTimeout = setTimeout(() => showTooltip(title, e), 1500);
     }, function () {
         clearTimeout(tooltipTimeout);
         $(this).attr('data-tooltip', $(this).data('tipText'));
