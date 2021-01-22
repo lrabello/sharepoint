@@ -38,7 +38,7 @@ $( document ).ready(function() {
     let tooltipTimeout;
 
     function showTooltip(title, e) {
-        $('<p class="stableTooltip"></p>').fadeIn(100).text(title).appendTo('body');
+        $('<p class="stableTooltip"></p>').addClass('slide-in-bottom').text(title).appendTo('body');
         $('.stableTooltip').css({
             top: e.pageY,
             left: e.pageX
