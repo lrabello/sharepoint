@@ -355,6 +355,16 @@ input {
                 $('li').addClass('hidden');
             } else
                 $('.info-text').addClass("error");
+                
+                for (i = 0; i < terms.length; i++) {
+                    if (isUiKit) {
+                        $(`li.uikit${'.'+ terms[i]}`).removeClass('hidden');
+                    } else {
+                        $(`li.${terms[i]}`).removeClass('hidden');
+                    }
+                }
+            
+            
         }
     }
 </script>
