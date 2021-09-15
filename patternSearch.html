@@ -202,161 +202,161 @@ input {
 
 </html>
 <script>
-    // ADD THE NEW TERMS IN THE guideSearch.html. Sharepoint is not recognizing this js. 
-    var patternOptions = ["stable", "specs", "uikit", "aboutscreen", "accordion", "actionbar", "addnewitem", "another", "applauncherandswitcherpanel", "assetinventory", "avatar", "badges", "range", "breadcrumb", "bulkactions", "buttons", "cardsview", "codeeditor", "commentsection", "cookieconsent", "gdpr", "overlay", "datepicker", "daterange", "dialog", "modal", "draganddrop", "dropdown", "emptystates", "facetsearch", "feederpanel", "fileuploader", "filtergroup", "footer", "form", "globalactions", "header", "imagecarousel", "inlineediting", "inputbox", "installer", "lists", "loading", "loginpage", "logs", "multibuttons", "segmentedcontrol", "metadatasection", "detailssection", "navigationsystem", "vertical", "horizontal", "menu", "notifications", "banner", "snackbar", "alerts", "error", "pagination", "panels", "richtexteditor", "scheduler", "searchbox", "scrollto", "selectionmechanism", "radiobutton",  "toggle", "checkbox", "selectiontool", "shortcuts", "skiplinks", "navigation", "keyboard", "focus", "slider", "splashscreen", "statustracker", "horizontaltabs", "tags", "textarea", "timepicker", "timerange", "titles", "toolbar", "tooltip", "treeview", "upwardnavigation", "back", "secondary", "userpreferences",  "visualflowdesigner", "wizard", "zoompanel", "users", "profile", "icons"];   
+var patternOptions = ["stable", "specs", "uikit", "aboutscreen", "accordion", "actionbar", "addnewitem", "another", "applauncherandswitcherpanel", "assetinventory", "avatar", "badges", "range", "breadcrumb", "bulkactions", "buttons", "cardsview", "codeeditor", "commentsection", "cookieconsent", "gdpr", "overlay", "datepicker", "daterange", "dialog", "modal", "draganddrop", "dropdown", "emptystates", "facetsearch", "feederpanel", "fileuploader", "filtergroup", "footer", "form", "globalactions", "header", "imagecarousel", "inlineediting", "inputbox", "installer", "lists", "loading", "loginpage", "logs", "multibuttons", "segmentedcontrol", "metadatasection", "detailssection", "navigationsystem", "vertical", "horizontal", "menu", "notifications", "banner", "snackbar", "alerts", "error", "pagination", "panels", "richtexteditor", "scheduler", "searchbox", "scrollto", "selectionmechanism", "radiobutton",  "toggle", "checkbox", "selectiontool", "shortcuts", "skiplinks", "navigation", "keyboard", "focus", "slider", "splashscreen", "statustracker", "horizontaltabs", "tags", "textarea", "timepicker", "timerange", "titles", "toolbar", "tooltip", "treeview", "upwardnavigation", "back", "secondary", "userpreferences",  "visualflowdesigner", "wizard", "zoompanel", "users", "profile", "icons"];   
 
     
-    var changed = ["table", "kpis"];
-    var changedMap = {
-        "table": {
-            url: "https://hitachivantara.sharepoint.com/sites/DesignSystem/Visualization%20Library/Home.aspx",
-            content: "Visualization Library"
-        },
-        "kpis": {
-            url: "https://hitachivantara.sharepoint.com/sites/DesignSystem/Visualization%20Library/Home.aspx",
-            content: "Visualization Library"
-        }
-    };
-        
-    $(document).ready(function() {
+var changed = ["table", "kpis"];
+var changedMap = {
+    "table": {
+        url: "https://hitachivantara.sharepoint.com/sites/DesignSystem/Visualization%20Library/Home.aspx",
+        content: "Visualization Library"
+    },
+    "kpis": {
+        url: "https://hitachivantara.sharepoint.com/sites/DesignSystem/Visualization%20Library/Home.aspx",
+        content: "Visualization Library"
+    }
+};
+    
+$(document).ready(function() {
 
-        $("li.search").remove();
-        $('.remove').removeClass('remove');
-        $('.hidden').removeClass('hidden');
-        var remove = false;
+    $("li.search").remove();
+    $('.remove').removeClass('remove');
+    $('.hidden').removeClass('hidden');
+    var remove = false;
 
-        let searchParams = new URLSearchParams(window.location.search);
-        if (searchParams.has('search')) {
-            searchInTableUiKit(findTags(fixValue(searchParams.get('search'))), $("#uikit-filter").is(':checked'));
-            //content = $('td.' + fixValue(searchParams.get('search'))+' .title').html();
-            $(".patternInputUiKit").val(searchParams.get('search'));
-        }
+    let searchParams = new URLSearchParams(window.location.search);
+    if (searchParams.has('search')) {
+        searchInTableUiKit(findTags(fixValue(searchParams.get('search'))), $("#uikit-filter").is(':checked'));
+        //content = $('td.' + fixValue(searchParams.get('search'))+' .title').html();
+        $(".patternInputUiKit").val(searchParams.get('search'));
+    }
 
-        $(".patternInputUiKit + #patternIcon").mousedown(function() {
+    $(".patternInputUiKit + #patternIcon").mousedown(function() {
 
-            if ($(".patternInputUiKit").hasClass("filled")) {
-                $(".patternInputUiKit").val("");
-                $(".patternInputUiKit").removeClass("filled");
-                searchInTableUiKit(findTagsUiKit(""), $("#uikit-filter").is(':checked'));
-            }
-
-            $('.info-text').removeClass("error");
-
-        });
-
-        $(".patternInputUiKit").keydown(function(e) {
-            if (e.keyCode == 13) // enter key
-            {
-                $('.patternInputUiKit').blur();
-                return false;
-            }
-        });
-
-        $(".patternInputUiKit").keyup(function() {
-
+        if ($(".patternInputUiKit").hasClass("filled")) {
+            $(".patternInputUiKit").val("");
             $(".patternInputUiKit").removeClass("filled");
+            searchInTableUiKit(findTagsUiKit(""), $("#uikit-filter").is(':checked'));
+        }
 
-            if ($(".patternInputUiKit").val().length > 0) {
-                $(".patternInputUiKit").addClass("filled");
-
-            }
-
-        });
-
-        $(".patternInputUiKit").focusout(function() {
-
-            $(".patternInputUiKit").removeClass("filled");
-
-        });
-
-        $(".patternInputUiKit").focusin(function() {
-
-            if ($(".patternInputUiKit").val().length > 0) {
-                $(".patternInputUiKit").addClass("filled");
-            }
-
-        });
-
-        $(".patternInputUiKit").on("input", function() {
-            searchInTableUiKit(findTagsUiKit(fixValueUiKit($('input.patternInputUiKit').val())), $("#uikit-filter").is(':checked'));
-        });
-
-        $("#uikit-filter").on("change", function() {
-            searchInTableUiKit(findTagsUiKit(fixValueUiKit($('input.patternInputUiKit').val())), this.checked);
-        });
-
-        $('.button').click(function() {
-            if (jQuery.inArray($('input.patternInputUiKit').val(), patternOptions) != -1) {
-                searchInTableUiKit($('input.patternInputUiKit').val(), $("#uikit-filter").is(':checked'));
-            }
-        });
+        $('.info-text').removeClass("error");
 
     });
 
-    function fixValueUiKit(value) {
-        return value.toLowerCase().replace(/\s/g, '');
-    }
+    $(".patternInputUiKit").keydown(function(e) {
+        if (e.keyCode == 13) // enter key
+        {
+            $('.patternInputUiKit').blur();
+            return false;
+        }
+    });
 
-    function findTagsUiKit(term) {
-        console.log(term);
+    $(".patternInputUiKit").keyup(function() {
 
-        var aux = 0;
-        var terms = [];
-        for (i = 0; i < patternOptions.length; i++) {
-            if (patternOptions[i].indexOf(term) != -1) {
-                terms[aux] = patternOptions[i];
-                aux++;
-            }
+        $(".patternInputUiKit").removeClass("filled");
+
+        if ($(".patternInputUiKit").val().length > 0) {
+            $(".patternInputUiKit").addClass("filled");
+
         }
 
-        remove = false;
-        for (i = 0; i < changed.length; i++) {
-            if (changed[i].indexOf(term) != -1) {
-                var errorMessage = $('div.error-message a');
+    });
 
-                var termInfo = changedMap[changed[i]];
-                errorMessage.attr('href', termInfo.url);
-                errorMessage.html(termInfo.content);
+    $(".patternInputUiKit").focusout(function() {
 
-                remove = true;
-            }
+        $(".patternInputUiKit").removeClass("filled");
+
+    });
+
+    $(".patternInputUiKit").focusin(function() {
+
+        if ($(".patternInputUiKit").val().length > 0) {
+            $(".patternInputUiKit").addClass("filled");
         }
 
-        return terms;
+    });
+
+    $(".patternInputUiKit").on("input", function() {
+        searchInTableUiKit(findTagsUiKit(fixValueUiKit($('input.patternInputUiKit').val())), $("#uikit-filter").is(':checked'));
+    });
+
+    $("#uikit-filter").on("change", function() {
+        searchInTableUiKit(findTagsUiKit(fixValueUiKit($('input.patternInputUiKit').val())), this.checked);
+    });
+
+    $('.button').click(function() {
+        if (jQuery.inArray($('input.patternInputUiKit').val(), patternOptions) != -1) {
+            searchInTableUiKit($('input.patternInputUiKit').val(), $("#uikit-filter").is(':checked'));
+        }
+    });
+
+});
+
+function fixValueUiKit(value) {
+    return value.toLowerCase().replace(/\s/g, '');
+}
+
+function findTagsUiKit(term) {
+    console.log(term);
+
+    var aux = 0;
+    var terms = [];
+    for (i = 0; i < patternOptions.length; i++) {
+        if (patternOptions[i].indexOf(term) != -1) {
+            terms[aux] = patternOptions[i];
+            aux++;
+        }
     }
 
-    function searchInTableUiKit(terms, isUiKit) {
-        $('li').addClass('hidden');
-        $("li.search").remove();
-        $(".remove").removeClass('remove');
+    remove = false;
+    for (i = 0; i < changed.length; i++) {
+        if (changed[i] === term) {
+            var errorMessage = $('div.error-message a');
 
-        $('.info-text').removeClass("error-removed");
-        $('.info-text').removeClass("error");
+            var termInfo = changedMap[changed[i]];
+            errorMessage.attr('href', termInfo.url);
+            errorMessage.html(termInfo.content);
 
-        if (terms.length === patternOptions.length && isUiKit) {
-            $(`li.uikit`).removeClass('hidden');
+            remove = true;
+            $('li').addClass('hidden');
+        }
+    }
+
+    return terms;
+}
+
+function searchInTableUiKit(terms, isUiKit) {
+    $('li').addClass('hidden');
+    $("li.search").remove();
+    $(".remove").removeClass('remove');
+
+    $('.info-text').removeClass("error-removed");
+    $('.info-text').removeClass("error");
+
+    if (terms.length === patternOptions.length && isUiKit) {
+        $(`li.uikit`).removeClass('hidden');
+    } else {
+        for (i = 0; i < terms.length; i++) {
+            if (isUiKit) {
+                $(`li.uikit${'.'+ terms[i]}`).removeClass('hidden');
+            } else {
+                $(`li.${terms[i]}`).removeClass('hidden');
+            }
+        }
+    }
+
+    if ($('li:not(".hidden")').length == 0) {
+        console.log(remove);
+
+        if (remove) {
+            $('.info-text').addClass("error-removed");
+             $('.info-text').removeClass("error");
+            //removing the cards to avoid showing the ones related to the "stable" class
+            //$('li').addClass('hidden');
         } else {
-            for (i = 0; i < terms.length; i++) {
-                if (isUiKit) {
-                    $(`li.uikit${'.'+ terms[i]}`).removeClass('hidden');
-                } else {
-                    $(`li.${terms[i]}`).removeClass('hidden');
-                }
-            }
+            $('.info-text').addClass("error");
         }
-
-        if ($('li:not(".hidden")').length == 0 || remove) {
-            console.log(remove);
-
-            if (remove) {
-                $('.info-text').addClass("error-removed");
-                 $('.info-text').removeClass("error");
-                //removing the cards to avoid showing the ones related to the "stable" class
-                $('li').addClass('hidden');
-            } else
-                $('.info-text').addClass("error");
-            
-            
-        }
+        
     }
+}
 </script>
