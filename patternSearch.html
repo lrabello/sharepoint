@@ -333,18 +333,7 @@ function searchInTableUiKit(terms, isUiKit) {
     $('.info-text').removeClass("error-removed");
     $('.info-text').removeClass("error");
 
-    if (terms.length === patternOptions.length && isUiKit) {
-        $(`li.uikit`).removeClass('hidden');
-    } else {
-        for (i = 0; i < terms.length; i++) {
-            if (isUiKit) {
-                $(`li.uikit${'.'+ terms[i]}`).removeClass('hidden');
-            } else {
-                $(`li.${terms[i]}`).removeClass('hidden');
-            }
-        }
-    }
-
+    
     if ($('li:not(".hidden")').length == 0) {
         console.log(remove);
 
@@ -357,6 +346,20 @@ function searchInTableUiKit(terms, isUiKit) {
             $('.info-text').addClass("error");
         }
         
+        return;
     }
-}
+
+    if (terms.length === patternOptions.length && isUiKit) {
+        $(`li.uikit`).removeClass('hidden');
+    } else {
+        for (i = 0; i < terms.length; i++) {
+            if (isUiKit) {
+                $(`li.uikit${'.'+ terms[i]}`).removeClass('hidden');
+            } else {
+                $(`li.${terms[i]}`).removeClass('hidden');
+            }
+        }
+    }
+
+
 </script>
