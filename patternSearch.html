@@ -334,12 +334,27 @@ function searchInTableUiKit(terms, isUiKit) {
     $('.info-text').removeClass("error");
 
     
+    if (!remove) {
+        if (terms.length === patternOptions.length && isUiKit) {
+            $(`li.uikit`).removeClass('hidden');
+        } else {
+            for (i = 0; i < terms.length; i++) {
+                if (isUiKit) {
+                    $(`li.uikit${'.'+ terms[i]}`).removeClass('hidden');
+                } else {
+                    $(`li.${terms[i]}`).removeClass('hidden');
+                }
+            }
+        }
+    }
+    
     if ($('li:not(".hidden")').length == 0) {
         console.log(remove);
 
         if (remove) {
             $('.info-text').addClass("error-removed");
              $('.info-text').removeClass("error");
+             remove = false;
             //removing the cards to avoid showing the ones related to the "stable" class
             //$('li').addClass('hidden');
         } else {
@@ -347,18 +362,6 @@ function searchInTableUiKit(terms, isUiKit) {
         }
         
         return;
-    }
-
-    if (terms.length === patternOptions.length && isUiKit) {
-        $(`li.uikit`).removeClass('hidden');
-    } else {
-        for (i = 0; i < terms.length; i++) {
-            if (isUiKit) {
-                $(`li.uikit${'.'+ terms[i]}`).removeClass('hidden');
-            } else {
-                $(`li.${terms[i]}`).removeClass('hidden');
-            }
-        }
     }
 
  }
